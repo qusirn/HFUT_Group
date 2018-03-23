@@ -14,7 +14,7 @@ variables:
 stages:
   - test
 
-php-7.1:
+php-7.1.7:
   type: test
   image: tetraweb/php:7.1-cli
   script:
