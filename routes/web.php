@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/room/{id}', function () {
+    return view('room', [
+        'name' => 'Victoria',
+        'user' => '-1',
+        'statue' => [
+            'value' => 'none'
+        ],
+    ]);
+});
