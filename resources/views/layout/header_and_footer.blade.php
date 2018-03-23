@@ -28,7 +28,7 @@
                         5A Education
                 </div>
                 @if ($user === -1)
-                <a href="/register" class="item">
+                <a href="/joinus" class="item">
                     <i class="user icon"></i>
                     Login
                 </a>
@@ -53,7 +53,7 @@
                     <div class="results"></div>
                 </div>
                 @if($user == -1)
-                <a href="/uploadMessage" class="item">
+                <a href="#" class="item">
                     <i class="plus icon"></i>
                 </a>
                 @else
