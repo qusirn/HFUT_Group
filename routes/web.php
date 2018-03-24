@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/room/{id}', function () {
     return view('room', [
         'name' => 'Victoria',
@@ -24,7 +23,6 @@ Route::get('/room/{id}', function () {
         ],
     ]);
 });
-
 Route::get('/joinus', function () {
     return view('joinus', [
         'name' => -1,
@@ -33,4 +31,13 @@ Route::get('/joinus', function () {
             'value' => 'none'
         ],
     ]);
+});
+Route::get('/video', function () {
+  return view('video', [
+      'name' => 'Victoria',
+      'user' => '-1',
+      'statue' => [
+          'value' => 'none'
+      ],
+  ]);
 });
