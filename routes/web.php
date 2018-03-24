@@ -41,3 +41,12 @@ Route::get('/video', function () {
       ],
   ]);
 });
+Route::get('/person', function () {
+  return view('person', [
+      'name' => 'Victoria',
+      'user' => '-1',
+      'statue' => [
+          'value' => 'none'
+      ],
+  ]);
+});
