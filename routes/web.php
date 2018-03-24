@@ -50,3 +50,12 @@ Route::get('/video', function () {
       ],
   ]);
 });
+Route::get('/classify', function () {
+    return view('classify',[
+      'name' => -1,
+      'user' => -1,
+      'statue' => [
+          'value' => 'none'
+        ],
+    ]);
+});
