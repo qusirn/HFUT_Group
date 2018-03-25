@@ -58,7 +58,8 @@ Route::get('/person', function () {
       'statue' => [
           'value' => 'none'
         ],
-]);
+    ]);
+});
 
 Route::get('/classify', function () {
     return view('classify',[
@@ -77,4 +78,5 @@ Route::get('/teacheropen', function () {
       'statue' => [
           'value' => 'none'
         ],
+    ]);
 });
