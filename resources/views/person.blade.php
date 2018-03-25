@@ -12,19 +12,9 @@
         <link href="/css/pages.css" rel="stylesheet" type="text/css">
         <link href="/css/menu.css" rel="stylesheet" type="text/css">
         <link href="/css/responsive.css" rel="stylesheet" type="text/css">
-
         <script src="/js/modernizr.min.js"></script>
-
-
     </head>
-
-
     <body class="fixed-left">
-
-
-
-            <!-- ========== Left Sidebar Start ========== -->
-
             <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
                     <div class="user-details">
@@ -79,25 +69,15 @@
                             <li>
                                 <a href="calendar.html" class="waves-effect"><i class="md md-invert-colors-on"></i><span> 时间轴 </span></a>
                             </li>
-
                         </ul>
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <!-- Left Sidebar End -->
-
-
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
-
                     <div class="container">
-
                       <div class="row">
                             <div class="col-sm-12">
                                 <h4 class="pull-left page-title">我叫不重名</h4>
@@ -120,7 +100,6 @@
                                 <div style="float: left;padding: 8px"><a href="#">了解等级特权</a></div>
                             </div>
                         </div>
-
                         <!-- Start Widget -->
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-lg-3">
@@ -310,93 +289,16 @@
                                         <h4>Gallary Image</h4>
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
-
-
-
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
                     2018 © 5A.
                 </footer>
-
             </div>
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
-
-
-            <!-- Right Sidebar -->
-
         </div>
-        <!-- END wrapper -->
-
-
-
         <!-- jQuery  -->
         <script src="/js/jquery.min.js"></script>
-
-
-        <!-- counters  -->
-        <script src="/jquery.waypoints.js"></script>
-        <script src="/jquery.counterup.min.js"></script>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('.counter').counterUp({
-                    delay: 100,
-                    time: 1200
-                });
-            });
-        </script>
-
-        <script type="text/javascript" src="/isotope.pkgd.min.js"></script>
-        <script type="text/javascript" src="/jquery.magnific-popup.min.js"></script>
-
-        <script type="text/javascript">
-            $(window).load(function(){
-                var $container = $('.portfolioContainer');
-                $container.isotope({
-                    filter: '*',
-                    animationOptions: {
-                        duration: 750,
-                        easing: 'linear',
-                        queue: false
-                    }
-                });
-
-                $('.portfolioFilter a').click(function(){
-                    $('.portfolioFilter .current').removeClass('current');
-                    $(this).addClass('current');
-
-                    var selector = $(this).attr('data-filter');
-                    $container.isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 750,
-                            easing: 'linear',
-                            queue: false
-                        }
-                    });
-                    return false;
-                });
-            });
-            $(document).ready(function() {
-                $('.image-popup').magnificPopup({
-                    type: 'image',
-                    closeOnContentClick: true,
-                    mainClass: 'mfp-fade',
-                    gallery: {
-                        enabled: true,
-                        navigateByImgClick: true,
-                        preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-                    }
-                });
-            });
-        </script>
     </body>
 </html>

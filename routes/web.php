@@ -14,6 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function () {
+    return view('home',[
+      'name' => -1,
+      'user' => -1,
+      'statue' => [
+          'value' => 'none'
+        ],
+    ]);
+});
 Route::get('/room/{id}', function () {
     return view('room', [
         'name' => 'Victoria',
@@ -41,12 +50,31 @@ Route::get('/video', function () {
       ],
   ]);
 });
+
 Route::get('/person', function () {
-  return view('person', [
+    return view('person', [
       'name' => 'Victoria',
       'user' => '-1',
       'statue' => [
           'value' => 'none'
-      ],
-  ]);
+        ],
+]);
+
+Route::get('/classify', function () {
+    return view('classify',[
+      'name' => -1,
+      'user' => -1,
+      'statue' => [
+          'value' => 'none'
+        ],
+    ]);
+});
+
+Route::get('/teacheropen', function () {
+    return view('teacheropen', [
+      'name' => 'Victoria',
+      'user' => '-1',
+      'statue' => [
+          'value' => 'none'
+        ],
 });
