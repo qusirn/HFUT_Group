@@ -63,7 +63,7 @@
                 @endif
             </div>
         </div>
-            @yield('main_content')
+        @yield('main_content')
         <div class="foot ui text container">
             <div class="ui list">
                 <div class="item">
@@ -107,7 +107,7 @@
             <div class="ui tiny error message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
                 <div class="header">操作错误警告</div>
-                <p>{{$statue['message']}} </p>
+                <p>{{$statue['message']}}</p>
             </div>
         </div>
         @elseif( $statue['value'] == 'success' )
