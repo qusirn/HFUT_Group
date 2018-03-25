@@ -51,6 +51,15 @@ Route::get('/video', function () {
   ]);
 });
 
+Route::get('/person', function () {
+    return view('person', [
+      'name' => 'Victoria',
+      'user' => '-1',
+      'statue' => [
+          'value' => 'none'
+        ],
+]);
+
 Route::get('/classify', function () {
     return view('classify',[
       'name' => -1,
@@ -62,12 +71,10 @@ Route::get('/classify', function () {
 });
 
 Route::get('/teacheropen', function () {
-  return view('teacheropen', [
+    return view('teacheropen', [
       'name' => 'Victoria',
       'user' => '-1',
       'statue' => [
           'value' => 'none'
-      ],
-  ]);
-
+        ],
 });
