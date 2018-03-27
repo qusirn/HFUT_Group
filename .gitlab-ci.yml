@@ -75,9 +75,9 @@ test:
   script:
   # run laravel tests
   # - php vendor/bin/phpunit --coverage-text --colors=never 
-    - php composer.phar install
     - php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
     - php composer-setup.php
+    - php composer.phar install
   # run frontend tests
   # if you have any task for testing frontend
   # set it in your package.json script
