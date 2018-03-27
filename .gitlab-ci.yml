@@ -75,10 +75,10 @@ test:
   script:
   # run laravel tests
   # - php vendor/bin/phpunit --coverage-text --colors=never 
-    # - php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
-    # - php composer-setup.php
-    - curl -sS https://getcomposer.org/installer | php
-    - php composer.phar install --no-plugins --no-scripts
+     - php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
+     - php composer-setup.php
+    # - curl -sS https://getcomposer.org/installer | php
+    # - php composer.phar install --no-plugins --no-scripts
   # run frontend tests
   # if you have any task for testing frontend
   # set it in your package.json script
