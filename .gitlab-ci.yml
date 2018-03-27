@@ -10,7 +10,7 @@ services:
   - mysql:latest
 
 variables:
-  MYSQL_DATABASE: HFUT_Group2
+  MYSQL_DATABASE: project_name
   MYSQL_ROOT_PASSWORD: secret
 
 # This folder is cached between builds
@@ -24,28 +24,28 @@ cache:
 # services such as redis or postgres
 before_script:
   # Update packages 
-  - sudo apt-get update -yqq
+  - apt-get update -yqq
   
   # Upgrade to Node 7
   - sudo curl -sL https://deb.nodesource.com/setup_6.x | bash -
   
   # Install dependencies
-  - sudo apt-get install git nodejs libcurl4-gnutls-dev libicu-dev libmcrypt-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libpq-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev -yqq
+  - apt-get install git nodejs libcurl4-gnutls-dev libicu-dev libmcrypt-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libpq-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev -yqq
 
   # Install php extensions
-  - sudo docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache
+  - docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache
 
   # Install & enable Xdebug for code coverage reports
-  - sudo pecl install xdebug
-  - sudo docker-php-ext-enable xdebug
+  - pecl install xdebug
+  - docker-php-ext-enable xdebug
 
   # Install Composer and project dependencies.
-  - sudo curl -sS https://getcomposer.org/installer | php
-  - sudo php composer.phar install 
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar install 
 
   # Install Node dependencies.
   # comment this out if you don't have a node dependency
-  - sudo npm install
+  - npm install
 
   # Copy over testing configuration.
   # Don't forget to set the database config in .env.testing correctly
@@ -53,31 +53,31 @@ before_script:
   # DB_DATABASE=project_name
   # DB_USERNAME=root
   # DB_PASSWORD=secret
-  - sudo cp .env.testing .env
+  - cp .env.testing .env
 
   # Run npm build
   # comment this out if you don't have a frontend build
   # you can change this to to your frontend building script like
   # npm run build
-  - sudo npm run dev
+  - npm run dev
 
   # Generate an application key. Re-cache.
-  - sudo php artisan key:generate
-  - sudo php artisan config:cache
+  - php artisan key:generate
+  - php artisan config:cache
 
   # Run database migrations.
-  - sudo php artisan migrate
+  - php artisan migrate
 
   # Run database seed
-  - sudo php artisan db:seed
+  - php artisan db:seed
 
 test:
   script:
   # run laravel tests
-  - sudo php vendor/bin/phpunit --coverage-text --colors=never 
+  - php vendor/bin/phpunit --coverage-text --colors=never 
 
   # run frontend tests
   # if you have any task for testing frontend
   # set it in your package.json script
   # comment this out if you don't have a frontend test
-  - sudo npm test
+  - npm test
