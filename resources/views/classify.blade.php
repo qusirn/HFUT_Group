@@ -1,8 +1,6 @@
-extends('layout.header_and_footer')
+@extends('layout.header_and_footer')
 @section('main_content')
-
 <div class="ui raised tiny container segment">
-
     <div class="top">
         <h1 class="ui header">直播分类</h1>
         <div class="ui menu">
@@ -41,7 +39,5 @@ extends('layout.header_and_footer')
             @endfor
         </div>
     </div>
-
 </div>
-
 @stop
