@@ -103,11 +103,11 @@ job_build:
 #   tags:
 #     - test
 #
-# job_deploy:
-#   stage: deploy
-#   script:
-#     - echo "deploy over..."
-#   only:
-#     - master
-#   tags:
-#     - test
+job_deploy:
+  stage: deploy
+  script:
+    - echo "deploy over..."
+  only:
+    - master
+  tags:
+    - test
