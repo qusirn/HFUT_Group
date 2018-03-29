@@ -93,7 +93,7 @@ job_build:
   only:
     - master
   tags:
-    - 5ATag
+    - test
 
 # job_test:
 #   stage: test
@@ -111,4 +111,4 @@ job_deploy:
   only:
     - master
   tags:
-    - 5ATag
+    - test
