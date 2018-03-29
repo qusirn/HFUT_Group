@@ -11,6 +11,6 @@ class AudienceTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Model\Audience::class, 50)->create();
     }
 }
