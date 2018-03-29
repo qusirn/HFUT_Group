@@ -13,11 +13,15 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Model\Live::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
+        'v_headling' => '这里是标题',
+        'v_cover' => 'img/test/test.jpeg', // secret
+        'v_code' => str_random(10)->unique(),
+        'v_classify' => '这里是分类名',
+        'v_looker_num' => 100,
+        't_id' => function () {
+            return factory(App\Model\Teacher::class)->create()->id;
+        },
     ];
 });

@@ -18,8 +18,8 @@ class CreateStudentsTable extends Migration
             $table->string('s_username', 50);
             $table->string('s_passwd', 50);
             $table->string('s_header', 100);
-            $table->string('s_tel', 50)->unique();;
-            $table->string('s_email', 50)->unique();;
+            $table->string('s_tel', 50)->unique();
+            $table->string('s_email', 50)->unique();
             $table->string('s_school', 50);
             $table->string('s_major', 50);
             $table->string('s_code', 50);
