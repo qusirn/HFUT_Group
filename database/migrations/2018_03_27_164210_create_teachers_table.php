@@ -18,8 +18,8 @@ class CreateTeachersTable extends Migration
             $table->string('t_name', 50);
             $table->string('t_passwd', 50);
             $table->string('t_header', 100);
-            $table->string('t_tel', 50)->unique();;
-            $table->string('t_email', 50)->unique();;
+            $table->string('t_tel', 50)->unique();
+            $table->string('t_email', 50)->unique();
             $table->string('t_company', 50);
             $table->timestamps();
         });
