@@ -78,6 +78,7 @@ stages:
 job_build:
   stage: build
   script:
+  - echo "deploy over..."
   # run laravel tests
   # - php vendor/bin/phpunit --coverage-text --colors=never
     # - php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
