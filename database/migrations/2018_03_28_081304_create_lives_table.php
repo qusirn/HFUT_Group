@@ -23,8 +23,10 @@ class CreateLivesTable extends Migration
             $table->integer('l_looker_num')->unsigned();
             $table->boolean('l_is_broadcast');
             $table->boolean('l_is_pause');
-            $table->integer('t_id')->unsigned()->references('t_id')->on('teachers');
+            $table->integer('t_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('t_id')->references('t_id')->on('teachers');
         });
     }
 
