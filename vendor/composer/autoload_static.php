@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
+class ComposerStaticInit101b1238055d583788d8158dfbe31385
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -363,6 +363,7 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'AudienceTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AudiencesTableSeeder.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -2164,6 +2165,7 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'League\\Flysystem\\Util\\ContentListingFormatter' => __DIR__ . '/..' . '/league/flysystem/src/Util/ContentListingFormatter.php',
         'League\\Flysystem\\Util\\MimeType' => __DIR__ . '/..' . '/league/flysystem/src/Util/MimeType.php',
         'League\\Flysystem\\Util\\StreamHasher' => __DIR__ . '/..' . '/league/flysystem/src/Util/StreamHasher.php',
+        'LiveTableSeeder' => __DIR__ . '/../..' . '/database/seeds/LivesTableSeeder.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -3252,6 +3254,7 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RecommendTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RecommendsTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -3345,6 +3348,7 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
+        'StudentTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StudentsTableSeeder.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -3903,6 +3907,7 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'Symfony\\Polyfill\\Php70\\Php70' => __DIR__ . '/..' . '/symfony/polyfill-php70/Php70.php',
         'Symfony\\Thanks\\Command\\ThanksCommand' => __DIR__ . '/..' . '/symfony/thanks/src/Command/ThanksCommand.php',
         'Symfony\\Thanks\\Thanks' => __DIR__ . '/..' . '/symfony/thanks/src/Thanks.php',
+        'TeacherTableSeeder' => __DIR__ . '/../..' . '/database/seeds/TeachersTableSeeder.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
@@ -3923,6 +3928,8 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'VideoTableSeeder' => __DIR__ . '/../..' . '/database/seeds/VideosTableSeeder.php',
+        'WatchHIstoryTableSeeder' => __DIR__ . '/../..' . '/database/seeds/WatchHistoriesTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
@@ -4016,10 +4023,10 @@ class ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitca83ba5b7fa78c90556bbf9820bea3d3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit101b1238055d583788d8158dfbe31385::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit101b1238055d583788d8158dfbe31385::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit101b1238055d583788d8158dfbe31385::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit101b1238055d583788d8158dfbe31385::$classMap;
 
         }, null, ClassLoader::class);
     }
