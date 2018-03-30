@@ -2,13 +2,14 @@
 body {
     background-color: #FFFFFF;
   }
-  .foot2{
+
+  .foot2 {
     margin-bottom:40px;
   }
   .main.container {
     margin-top: 2em;
   }
-  
+
   .main.menu {
     margin-top: 4em;
     border-radius: 0;
@@ -19,42 +20,46 @@ body {
       padding 0.5s ease
     ;
   }
+
   .main.menu .item img.logo {
     margin-right: 1.5em;
   }
-  
+
   .overlay {
     float: left;
     margin: 0em 3em 1em 0em;
   }
+
   .overlay .menu {
     position: relative;
     left: 0;
     transition: left 0.5s ease;
   }
-  
+
   .main.menu.fixed {
     background-color: #FFFFFF;
     border: 1px solid #DDD;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   }
+
   .overlay.fixed .menu {
     left: 800px;
   }
-  
+
   .main.container .left.floated.image {
     margin: 2em 2em 2em -4em;
   }
+
   .main.container .right.floated.image {
     margin: 2em -4em 2em 2em;
   }
-  
+
   .ui.footer.segment {
     margin: 5em 0em 0em;
     padding: 5em 0em;
   }
-  
-  .foot{
+
+  .foot {
     margin-top:100px;
     margin-bottom:100px;
   }
