@@ -27,7 +27,7 @@
                     <img class="logo" src="/img/logo.png">
                         5A Education
                 </div>
-                @if ($user === -1)
+                @if ($messages['user'] === -1)
                 <a href="/joinus" class="item">
                     <i class="user icon"></i>
                     Login
@@ -52,7 +52,7 @@
                     </div>
                     <div class="results"></div>
                 </div>
-                @if($user == -1)
+                @if($messages['statue']['user'] == -1)
                 <a href="#" class="item">
                     <i class="plus icon"></i>
                 </a>
@@ -102,20 +102,20 @@
                 <a class="item" href="#">Privacy Policy</a>
             </div>
         </div>
-        @if( $statue['value'] == 'error' )
+        @if( $messages['statue']['value'] == 'error' )
         <div class="ui container fixed bottom sticky five column grid">
             <div class="ui tiny error message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
                 <div class="header">操作错误警告</div>
-                <p>{{$statue['message']}}</p>
+                <p>{{$messages['statue']['message']}}</p>
             </div>
         </div>
-        @elseif( $statue['value'] == 'success' )
+        @elseif( $messages['statue']['value'] == 'success' )
         <div class="ui container fixed bottom sticky five column grid">
             <div class="ui tiny success message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
                 <div class="header">欢迎：D</div>
-                <p>{{$statue['message']}} </p>
+                <p>{{$messages['statue']['message']}} </p>
             </div>
         </div>
         @endif
