@@ -4,11 +4,11 @@
     <div class="full height">
         <div class="article">
             <div class="main ui container">
-                @for ($n = 0; $n < 2; $n++)
+                @foreach ($videos_arr as $classify => $videos)
                 <div class="ui raised tiny container segment">
-                    <h2 class="ui header">这里是视频分类</h2>
+                    <h2 class="ui header">{{ $classify }}</h2>
                     <div class="ui four column very padded doubling stackable grid container">
-                        @for ($i = 0; $i < 8; $i++)
+                        @foreach ($videos as $video)
                         <div class="column">
                             <script src="js/video.js" charset="utf-8"></script>
                             <div class="ui special cards">
@@ -24,7 +24,7 @@
                                         <img src="/img/test/test.jpeg">
                                     </div>
                                     <div class="content">
-                                        <a class="header">这里是课程名</a>
+                                        <a class="header">{{ $video['v_headling'] }}</a>
                                         <div class="meta">
                                             <span class="date">这里是课程介绍</span>
                                         </div>
@@ -35,10 +35,10 @@
                                 </div>
                             </div>
                         </div>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>
