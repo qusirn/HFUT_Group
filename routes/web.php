@@ -42,15 +42,7 @@ Route::get('/joinus', function () {
         ],
     ]);
 });
-Route::get('/video', function () {
-  return view('video', [
-      'name' => 'Victoria',
-      'user' => '-1',
-      'statue' => [
-          'value' => 'none'
-      ],
-  ]);
-});
+Route::get('/video', 'VideoController@index');
 
 Route::get('/person', function () {
     return view('person', [

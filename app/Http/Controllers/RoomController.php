@@ -13,6 +13,7 @@ class RoomController extends Controller {
      */
     public function room(Request $request)
     {
+        
         $messages = $request->session()->get('messages');
         return view('room', ['messages' => $messages]);
     }
