@@ -356,7 +356,7 @@ class ComposerStaticInit101b1238055d583788d8158dfbe31385
         'App\\Model\\Recommend' => __DIR__ . '/../..' . '/app/Model/Recommend.php',
         'App\\Model\\Student' => __DIR__ . '/../..' . '/app/Model/Student.php',
         'App\\Model\\Teacher' => __DIR__ . '/../..' . '/app/Model/Teacher.php',
-        'App\\Model\\Videos' => __DIR__ . '/../..' . '/app/Model/Video.php',
+        'App\\Model\\Video' => __DIR__ . '/../..' . '/app/Model/Video.php',
         'App\\Model\\WatchHistory' => __DIR__ . '/../..' . '/app/Model/WatchHistory.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

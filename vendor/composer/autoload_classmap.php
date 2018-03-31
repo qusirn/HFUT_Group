@@ -28,7 +28,7 @@ return array(
     'App\\Model\\Recommend' => $baseDir . '/app/Model/Recommend.php',
     'App\\Model\\Student' => $baseDir . '/app/Model/Student.php',
     'App\\Model\\Teacher' => $baseDir . '/app/Model/Teacher.php',
-    'App\\Model\\Videos' => $baseDir . '/app/Model/Video.php',
+    'App\\Model\\Video' => $baseDir . '/app/Model/Video.php',
     'App\\Model\\WatchHistory' => $baseDir . '/app/Model/WatchHistory.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
