@@ -27,22 +27,22 @@
                     <img class="logo" src="/img/logo.png">
                         5A Education
                 </div>
-                @if ($messages['user'] === -1)
-                <a href="/joinus" class="item">
-                    <i class="user icon"></i>
-                    Login
-                </a>
-                @else
+                @if ( Session::has('messages') && Session::get('messages')['user'] != -1)
                 <div class="ui pointing dropdown item">
                     <img class="ui avatar image" src="/img/head tiny/joe.jpg">
-                    <span>haooon</span>
+                    <span>{{Session::get('messages')['user']['user_name']}}</span>
                     <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a class="item" href="logout" id="logout"><i class="red sign out icon"></i><span style="color:red;"> Logout</span></a>
+                        <a class="item" href="/logout" id="logout"><i class="red sign out icon"></i><span style="color:red;"> Logout</span></a>
                         <a class="item" href="#link2"><i class="users icon"></i> Browse</a>
                         <a class="item" href="#link3"><i class="search icon"></i> Search</a>
                     </div>
                 </div>
+                @else
+                <a href="/joinus" class="item">
+                    <i class="user icon"></i>
+                    Login
+                </a>
                 @endif
                 <a href="#" class="item">Articles</a>
                 <div class="ui small search right item">
@@ -52,15 +52,6 @@
                     </div>
                     <div class="results"></div>
                 </div>
-                @if($messages['statue']['user'] == -1)
-                <a href="#" class="item">
-                    <i class="plus icon"></i>
-                </a>
-                @else
-                <a href="#" class="item" id="add">
-                    <i class="plus icon"></i>
-                </a>
-                @endif
             </div>
         </div>
         @yield('main_content')
@@ -102,20 +93,20 @@
                 <a class="item" href="#">Privacy Policy</a>
             </div>
         </div>
-        @if( $messages['statue']['value'] == 'error' )
+        @if( Session::get('messages')['statue']['value'] == 'error' )
         <div class="ui container fixed bottom sticky five column grid">
             <div class="ui tiny error message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
                 <div class="header">操作错误警告</div>
-                <p>{{$messages['statue']['message']}}</p>
+                <p>{{Session::get('messages')['statue']['message']}}</p>
             </div>
         </div>
-        @elseif( $messages['statue']['value'] == 'success' )
+        @elseif( Session::get('messages')['statue']['value'] == 'success' )
         <div class="ui container fixed bottom sticky five column grid">
             <div class="ui tiny success message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
                 <div class="header">欢迎：D</div>
-                <p>{{$messages['statue']['message']}} </p>
+                <p>{{Session::get('messages')['statue']['message']}} </p>
             </div>
         </div>
         @endif

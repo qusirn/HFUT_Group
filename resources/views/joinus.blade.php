@@ -1,7 +1,7 @@
 @extends('layout.header_and_footer')
 
 @section('main_content')
-<link rel="stylesheet" type="text/css" href="/css/joinus.css">
+
 <script src="/js/register.js"></script>
 <div class="ui shape container text">
     <div class="sides centered">
@@ -19,7 +19,7 @@
                                     <label>手机号</label>
                                     <input placeholder="请输入手机号" name="tel" type="text">
                                 </div>
-                                <div class="two fields">
+                                <div class="two fields" id="captcha">
                                     <div class="field">
                                         <label>验证码</label>
                                         <input name="captcha" type="text">
@@ -59,12 +59,12 @@
                         <form class="ui form attached fluid segment" id="login" method="POST" action="/Postlogin">
                             {!! csrf_field() !!}
                             <div class="field">
-                                <label>Username</label>
-                                <input placeholder="Username" name="username" type="text">
+                                <label>手机号</label>
+                                <input placeholder="请填写手机号" name="tel" type="text">
                             </div>
                             <div class="field">
-                                <label>Password</label>
-                                <input type="password" name="password">
+                                <label>密码</label>
+                                <input placeholder="请填写密码" type="password" name="password">
                             </div>
                             <div class="ui blue submit button">Submit</div>
                         </form>
@@ -77,5 +77,5 @@
         </div>
     </div>
 </div>
-
+<link rel="stylesheet" type="text/css" href="/css/joinus.css">
 @stop

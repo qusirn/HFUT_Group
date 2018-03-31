@@ -20,9 +20,21 @@ class Student extends Model
         $user = new Student;
         $user->s_username = $s_username;
         $user->s_tel = $s_tel;
-        $user->s_email = '';
+        $user->s_email = $s_tel;
         $user->s_passwd = hash('sha1', $s_passwd);
         $user->save();
-        return Message::message('success', '欢迎 '.$user->username, Message::user($user->id, $user->username));
+        return Message::message('success', '欢迎 '.$user->s_username, Message::user($user->s_id, $user->s_username));
+    }
+
+    public function login($tel, $password){
+        $user = Student::where('s_tel', $tel)->first();
+        if($user == NULL){
+            return Message::Message('error', '学生不存在', Message::none_user());
+        }
+        if(hash('sha1', $password) == $user->s_passwd){
+            return Message::Message('success', '欢迎 '.$user->s_username, Message::user($user->s_id, $user->s_username));
+        }else{
+            return Message::Message('error', '错误，密码不正确！', Message::none_user());
+        }
     }
 }

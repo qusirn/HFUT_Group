@@ -10,7 +10,7 @@ $(document)
                       rules: [
                           {
                               type: 'empty',
-                              prompt: 'Please enter your name'
+                              prompt: '请填写用户名'
                           }
                       ]
                   },
@@ -19,7 +19,11 @@ $(document)
                       rules: [
                           {
                               type: 'empty',
-                              prompt: 'Please enter a username'
+                              prompt: '请填写手机号'
+                          },
+                          {
+                              type: 'exactLength[11]',
+                              prompt: '手机号格式错误'
                           }
                       ]
                   },
@@ -28,11 +32,11 @@ $(document)
                       rules: [
                           {
                               type: 'empty',
-                              prompt: 'Please enter a password'
+                              prompt: '请填写密码'
                           },
                           {
                               type: 'minLength[6]',
-                              prompt: 'Your password must be at least {ruleValue} characters'
+                              prompt: '密码至少 {ruleValue} 位'
                           }
                       ]
                   },
@@ -41,7 +45,7 @@ $(document)
                       rules: [
                           {
                               type: 'empty',
-                              prompt: '!!!'
+                              prompt: '请填写4位验证码!!!'
                           }
                       ]
                   },
@@ -52,13 +56,17 @@ $(document)
               inline: true,
               on: 'blur',
               fields: {
-                  username: {
-                      identifier: 'username',
+                  tel: {
+                      identifier: 'tel',
                       rules: [
                           {
                               type: 'empty',
-                              prompt: 'Please enter your Username'
+                              prompt: '请填写手机号'
                           },
+                          {
+                              type: 'exactLength[11]',
+                              prompt: '手机号格式错误'
+                          }
                       ]
                   },
                   password: {
@@ -66,11 +74,11 @@ $(document)
                       rules: [
                           {
                               type: 'empty',
-                              prompt: 'Please enter your password'
+                              prompt: '请填写密码'
                           },
                           {
-                              type: 'length[6]',
-                              prompt: 'Your password must be at least 6 characters'
+                              type: 'minLength[6]',
+                              prompt: '密码至少 {ruleValue} 位'
                           }
                       ]
                   },
