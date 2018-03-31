@@ -109,6 +109,6 @@
                 <p>{{Session::get('messages')['statue']['message']}} </p>
             </div>
         </div>
-
+        @endif
     </body>
 </html>

@@ -98,12 +98,12 @@ job_build:
 job_PHPUnit:
   stage: PHPUnit
   script:
-    - phpunit
+    - echo "PHPUnit..."
   only:
     - master
   tags:
     - test
-    
+
 job_deploy:
   stage: deploy
   script:
