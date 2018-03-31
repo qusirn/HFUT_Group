@@ -300,5 +300,12 @@
         </div>
         <!-- jQuery  -->
         <script src="/js/jquery.min.js"></script>
+        <script src="/js/goup.js"></script>
+        <!-- counters  -->
+        <script src="/js/jquery.waypoints.js"></script>
+        <script src="/js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/js/choice.js"></script>
     </body>
 </html>
