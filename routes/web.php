@@ -23,26 +23,16 @@ Route::get('/home', function () {
         ],
     ]);
 });
-// Route::get('/room/{id}', function () {
-//     return view('room', [
-//         'name' => 'Victoria',
-//         'user' => '-1',
-//         'statue' => [
-//             'value' => 'none'
-//         ],
-//     ]);
-// });
 Route::get('/room/{id}', 'RoomController@room');
-Route::get('/joinus', function () {
-    return view('joinus', [
-        'name' => -1,
-        'user' => -1,
-        'statue' => [
-            'value' => 'none'
-        ],
-    ]);
+Route::get('/video', function () {
+  return view('video', [
+      'name' => 'Victoria',
+      'user' => '-1',
+      'statue' => [
+          'value' => 'none'
+      ],
+  ]);
 });
-Route::get('/video', 'VideoController@index');
 
 Route::get('/person', function () {
     return view('person', [
@@ -73,5 +63,7 @@ Route::get('/teacheropen', function () {
         ],
     ]);
 });
+Route::get('/logout', 'AuthController@logout');
+Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');
 Route::post('/Postlogin', 'AuthController@Postlogin');

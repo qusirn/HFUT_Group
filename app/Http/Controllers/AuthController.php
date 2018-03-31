@@ -13,18 +13,37 @@ class AuthController extends Controller {
      */
     public function Postregister(Request $request)
     {
-        $userFunc = new Student;
-        $message = $userFunc->register(
+        $student = new Student;
+        $messages = $student->register(
             $request->name,
             $request->tel,
             $request->password
         );
-        if($message['user'] == -1){
-            return redirect(url()->previous());
-        }
         $request->session()->put('messages', $messages);
-        $this->Postlogin($request);
-        return view('home');
+        if($messages['statue']['value'] != 'success'){
+            return redirect('/joinus');
+        }
+        return redirect($request->session()->get('last_page'));
     }
 
+    public function Postlogin(Request $request)
+    {
+        $student = new Student;
+        $messages = $student->login(
+            $request->tel,
+            $request->password
+        );
+        $request->session()->put('messages', $messages);
+        if($messages['statue']['value'] == 'success'){
+            return redirect($request->session()->get('last_page'));
+        }else{
+            return redirect('/joinus');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('messages');
+        return redirect(url()->previous());
+    }
 }
