@@ -24,28 +24,28 @@ cache:
 # services such as redis or postgres
 before_script:
   # Update packages
-   - apt-get update -yqq
+  # - apt-get update -yqq
 
   # Upgrade to Node 7
-   - curl -sL https://deb.nodesource.com/setup_7.x | bash -
+  # - curl -sL https://deb.nodesource.com/setup_7.x | bash -
 
   # Install dependencies
-   - apt-get install git nodejs libcurl4-gnutls-dev libicu-dev libmcrypt-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libpq-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev -yqq
+  # - apt-get install git nodejs libcurl4-gnutls-dev libicu-dev libmcrypt-dev libvpx-dev libjpeg-dev libpng-dev libxpm-dev zlib1g-dev libfreetype6-dev libxml2-dev libexpat1-dev libbz2-dev libgmp3-dev libldap2-dev unixodbc-dev libpq-dev libsqlite3-dev libaspell-dev libsnmp-dev libpcre3-dev libtidy-dev -yqq
 
   # Install php extensions
-   - docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache
+  # - docker-php-ext-install mbstring mcrypt pdo_mysql curl json intl gd xml zip bz2 opcache
 
   # Install & enable Xdebug for code coverage reports
-   - pecl install xdebug
-   - docker-php-ext-enable xdebug
+  # - pecl install xdebug
+  # - docker-php-ext-enable xdebug
 
   # Install Composer and project dependencies.
-   - curl -sS https://getcomposer.org/installer | php
-   - php composer.phar install --no-plugins --no-scripts
+  # - curl -sS https://getcomposer.org/installer | php
+  # - php composer.phar install --no-plugins --no-scripts
 
   # Install Node dependencies.
   # comment this out if you don't have a node dependency
-   - npm install
+  # - npm install
 
   # Copy over testing configuration.
   # Don't forget to set the database config in .env.testing correctly
@@ -53,26 +53,26 @@ before_script:
   # DB_DATABASE=project_name
   # DB_USERNAME=root
   # DB_PASSWORD=secret
-   - cp .env.testing .env
+  # - cp .env.testing .env
 
   # Run npm build
   # comment this out if you don't have a frontend build
   # you can change this to to your frontend building script like
   # npm run build
-   - npm run dev
+  # - npm run dev
 
   # Generate an application key. Re-cache.
-   - php artisan key:generate
-   - php artisan config:cache
+  # - php artisan key:generate
+  # - php artisan config:cache
 
   # Run database migrations.
-   - php artisan migrate
+  # - php artisan migrate
 
   # Run database seed
-   - php artisan db:seed
+  # - php artisan db:seed
 stages:
   - build
-  - test
+  - PHPUnit
   - deploy
 
 job_build:
@@ -95,15 +95,15 @@ job_build:
   tags:
     - test
 
-# job_test:
-#   stage: test
-#   script:
-#     -
-#   only:
-#     - master
-#   tags:
-#     - test
-#
+job_PHPUnit:
+  stage: PHPUnit
+  script:
+    - phpunit
+  only:
+    - master
+  tags:
+    - test
+    
 job_deploy:
   stage: deploy
   script:
