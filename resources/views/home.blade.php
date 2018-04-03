@@ -24,10 +24,16 @@
         <span class="next" @click="next">&gt;</span>
     </div>
 </div>
-<div class="containert">
+<div class="ui hidden divider"></div>
+<div class="containertTitle">
     <div class="ui horizontal divider">
         直播推荐
     </div>
+    <div class="ui hidden divider"></div>
+    <a href="#"><span class="moreButton"><i class="list icon"></i></span></a>
+    <div class="ui hidden divider"></div>
+</div>
+<div class="containert">
     <div class="ui special cards">
         @for ($i = 0; $i < 8; $i++)
         <div class="card">
@@ -56,11 +62,20 @@
         </div>
         @endfor
     </div>
-    <div class="ui hidden divider"></div>
-    <div class="ui hidden divider"></div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="containertTitle">
     <div class="ui horizontal divider">
         录播推荐
     </div>
+    <div class="ui hidden divider"></div>
+    <a href="#"><span class="moreButton"><i class="list icon"></i></span></a>
+    <div class="ui hidden divider"></div>
+</div>
+<div class="containert">
     <div class="ui special cards">
     @for ($i = 0; $i < 8; $i++)
         <div class="card">
