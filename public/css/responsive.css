@@ -81,6 +81,9 @@ File: Responsive
   .footer {
     left: 0px !important;
   }
+  .fixedHeader-floating {
+    top: 60px !important;
+  }
 }
 @media (max-width: 480px) {
   .side-menu {
