@@ -24,15 +24,7 @@ Route::get('/home', function () {
     ]);
 });
 Route::get('/room/{id}', 'RoomController@room');
-Route::get('/video', function () {
-  return view('video', [
-      'name' => 'Victoria',
-      'user' => '-1',
-      'statue' => [
-          'value' => 'none'
-      ],
-  ]);
-});
+Route::get('/video', 'VideoController@index');
 
 Route::get('/person', function () {
     return view('person', [
@@ -53,6 +45,13 @@ Route::get('/classify', function () {
         ],
     ]);
 });
+Route::get('/classify', 'ClassifyController@index');
+Route::get('/classify/php_live', 'ClassifyController@php_live');
+Route::get('/classify/java_live', 'ClassifyController@java_live');
+Route::get('/classify/bigdate_live', 'ClassifyController@bigdate_live');
+Route::get('/classify/html_live', 'ClassifyController@html_live');
+Route::get('/classify/python_live', 'ClassifyController@python_live');
+Route::get('/classify/cpp_live', 'ClassifyController@cpp_live');
 
 Route::get('/teacheropen', function () {
     return view('teacheropen', [
