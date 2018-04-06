@@ -88,4 +88,19 @@ $(document)
             $('.changepage').on('click', function(event) {
                 $('.shape').shape('flip over');
             });
+
+            $('.captcha_button').on('click', function(event) {
+                var user = {
+                    'tel':$('#tel_num').val(),
+                };
+                $.ajax({
+                    headers: {
+                        'X-XSRF-TOKEN': $.cookie('XSRF-TOKEN')
+                    },
+                    type: 'post',
+                    url: '/Postcaptcha',
+                    contentType: 'application/json;charset=utf-8',
+                    data: '{"tel":' + $('#tel_num').val() + '}'
+                });
+            });
         });

@@ -66,3 +66,4 @@ Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');
 Route::post('/Postlogin', 'AuthController@Postlogin');
+Route::post('/Postcaptcha', 'SmsController@sms_func');
