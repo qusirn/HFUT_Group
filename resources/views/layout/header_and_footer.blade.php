@@ -6,6 +6,7 @@
         <title>Room</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.cookie.js"></script>
         <link rel="shortcut icon" href="/img/logo.png" >
         <script src="/semantic/dist/components/transition.js"></script>
         <script src="/semantic/dist/components/dropdown.js"></script>

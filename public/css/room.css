@@ -1,32 +1,32 @@
-.live_page{
+.live_page {
     margin-top: 100px;
 }
-.live_frame{
+.live_frame {
     margin-left: 0px;
     margin-right: 20px;
 }
-.reply_content{
+.reply_content {
     height: 400px;
 }
-.reply_button{
+.reply_button {
     margin-top: 30px;
     margin-bottom: -10px;
 }
-.tab{
+.tab {
     height:500px;
     background-color: black;
     background-image: url('/img/test.png');
 }
-.chat{
+.chat {
     height:600px;
     background-color: gray;
 }
-.room_message{
+.room_message {
     margin-top: 100px;
     height:150px;
     margin-top:100px;
     margin-bottom:-50px;
 }
-.reply_content{
+.reply_content {
      overflow:auto;
 }

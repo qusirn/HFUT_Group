@@ -17,7 +17,7 @@
                             <div class="two fields">
                                 <div class="field">
                                     <label>手机号</label>
-                                    <input placeholder="请输入手机号" name="tel" type="text">
+                                    <input placeholder="请输入手机号" name="tel" type="text" id="tel_num">
                                 </div>
                                 <div class="two fields" id="captcha">
                                     <div class="field">
@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="field">
                                         <label>获取验证码</label>
-                                        <div class="ui gray button">获取</div>
+                                        <div class="ui gray button captcha_button">获取</div>
                                     </div>
                                 </div>
                             </div>
