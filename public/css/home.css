@@ -1,12 +1,11 @@
 .containert {
-  width:1202px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-
+    width:1202px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .containertTitle {
     width: 1202px;
@@ -18,8 +17,8 @@
     font-size: 20px;
     float: right;
 }
-body{ }
-    *{
+body { }
+    * {
         margin: 0;
         padding: 0;
     }
@@ -56,37 +55,33 @@ body{ }
         margin-left: -42px;
     }
     .bullet span {
-display: inline-block;
-width: 10px;
-height: 10px;
-background-color: #ffffff;
-margin-left: 15px;
-border-radius: 10px;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff;
+        margin-left: 15px;
+        border-radius: 10px;
     }
     .bullet span:first-child {
         margin-left: 0;
     }
-    .switch {
-
-    }
+    .switch { }
     .switch span {
-position: absolute;
-width: 50px;
-height: 50px;
-line-height: 50px;
-text-align: center;
-background-color: rgba(0,0,0,.1);
-font-size: 20px;
-color: #ffffff;
-top: 50%;
-margin-top: -25px;
-cursor: pointer;
-font-family: "宋体";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: rgba(0,0,0,.1);
+        font-size: 20px;
+        color: #ffffff;
+        top: 50%;
+        margin-top: -25px;
+        cursor: pointer;
+        font-family: "宋体";
     }
 .switch span:hover {
-
-background-color: rgba(0,0,0,.5);
-
+    background-color: rgba(0,0,0,.5);
     }
     .prev {
         left: 0;

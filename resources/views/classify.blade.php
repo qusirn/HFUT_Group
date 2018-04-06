@@ -1,43 +1,73 @@
 @extends('layout.header_and_footer')
 @section('main_content')
-<div class="ui raised tiny container segment">
-    <div class="top">
-        <h1 class="ui header">直播分类</h1>
-        <div class="ui menu">
-            <a class="blue item">直播分类</a>
-            <a class="violet item">PHP</a>
-            <a class="purple item">Java</a>
-            <a class="grey item">大数据</a>
-            <a class="pink item">HTML/CSS</a>
-            <a class="brown item">Python</a>
-            <a class="grey item">人工智能</a>
+<link rel="stylesheet" href="/css/classify.css">
+<link rel="stylesheet" href="/css/animate.min.css">
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="center">
+    <div class="ui secondary menu">
+        <div class="header item">形式:</div>
+        <a class="item active" data-tab="live">直播</a>
+        <a class="item" data-tab="video">录播</a>
+    </div>
+    <div class="ui tab active" data-tab="live">
+        <div class="ui divider"></div>
+        <div class="ui secondary menu">
+            <div class="header item">分类:</div>
+            <a class="item active" data-tab="live/C++">C++</a>
+            <a class="item" data-tab="live/Java">Java</a>
+            <a class="item" data-tab="live/Python">Python</a>
+            <a class="item" data-tab="live/PHP">PHP</a>
+            <a class="item" data-tab="live/C">C</a>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui tab active" data-tab="live/C++">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/Java">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/Python">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/PHP">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/C">
+            @include('layout.classify_list')
         </div>
     </div>
-    <div class="ui main container">
-        <div class="ui four column very padded doubling stackable grid container">
-            @for ($n = 0; $n < 8; $n++)
-            <div class="column">
-                <div class="ui link cards">
-                    <div class="card">
-                        <div class="tiny image">
-                            <img src="img/classify/kristy.png">
-                        </div>
-                        <div class="content">
-                            <div class="header">Java语言程序设计基础篇</div>
-                            <div class="meta">
-                              <a>廖雪峰</a>
-                            </div>
-                            <div class="description">Matthew is an interior designer living in New York. </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">实战 </span>
-                            <span><i class="user icon"></i> 廖雪峰 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endfor
+    <div class="ui tab" data-tab="video">
+        <div class="ui divider"></div>
+        <div class="ui secondary menu">
+            <div class="header item">分类:</div>
+            <a class="item active" data-tab="video/C++">C++</a>
+            <a class="item" data-tab="video/Java">Java</a>
+            <a class="item" data-tab="video/Python">Python</a>
+            <a class="item" data-tab="video/PHP">PHP</a>
+            <a class="item" data-tab="video/C">C</a>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui tab active" data-tab="video/C++">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/Java">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/Python">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/PHP">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/C">
+            @include('layout.classify_list')
         </div>
     </div>
 </div>
+<script src="/js/classify.js"></script>
 @stop
