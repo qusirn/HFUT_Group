@@ -1,42 +1,73 @@
 @extends('layout.header_and_footer')
 @section('main_content')
-<div class="ui raised tiny container segment">
-    <div class="top">
-        <a href = "/classify"><h1 class="ui header">直播分类</h1></a>
-        <div class="ui menu">
-            <a class="blue item" href = "/classify">直播分类</a>
-            <a class="violet item"href="/classify/php_live">PHP</a>
-            <a class="purple item" href="/classify/java_live">Java</a>
-            <a class="grey item"href="/classify/bigdate_live">大数据</a>
-            <a class="pink item"href="/classify/html_live">HTML/CSS</a>
-            <a class="brown item"href="/classify/python_live">Python</a>
-            <a class="grey item"href="/classify/cpp_live">C++</a>
+<link rel="stylesheet" href="/css/classify.css">
+<link rel="stylesheet" href="/css/animate.min.css">
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="center">
+    <div class="ui secondary menu">
+        <div class="header item">形式:</div>
+        <a class="item active" data-tab="live">直播</a>
+        <a class="item" data-tab="video">录播</a>
+    </div>
+    <div class="ui tab active" data-tab="live">
+        <div class="ui divider"></div>
+        <div class="ui secondary menu">
+            <div class="header item">分类:</div>
+            <a class="item active" data-tab="live/C++">C++</a>
+            <a class="item" data-tab="live/Java">Java</a>
+            <a class="item" data-tab="live/Python">Python</a>
+            <a class="item" data-tab="live/PHP">PHP</a>
+            <a class="item" data-tab="live/C">C</a>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui tab active" data-tab="live/C++">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/Java">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/Python">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/PHP">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="live/C">
+            @include('layout.classify_list')
         </div>
     </div>
-    <div class="ui main container">
-        <div class="ui four column very padded doubling stackable grid container">
-            @foreach ($lives as $live)
-            <div class="column">
-                <div class="ui link cards">
-                    <div class="card">
-                        <div class="tiny image">
-                            <img src={{ $live->l_cover}}>
-                        </div>
-                        <div class="content">
-                            <div class="header">{{ $live->l_headling }}</div>
-                            <div class="meta">
-                                <span><i class="user icon"></i> {{ $live->l_looker_num }} </span>
-                            </div>
-                            <div class="description">Matthew is an interior designer living in New York. </div>
-                        </div>
-                        <div class="extra content">
-                            <!-- <span><i class="user icon"></i> 廖雪峰 </span> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+    <div class="ui tab" data-tab="video">
+        <div class="ui divider"></div>
+        <div class="ui secondary menu">
+            <div class="header item">分类:</div>
+            <a class="item active" data-tab="video/C++">C++</a>
+            <a class="item" data-tab="video/Java">Java</a>
+            <a class="item" data-tab="video/Python">Python</a>
+            <a class="item" data-tab="video/PHP">PHP</a>
+            <a class="item" data-tab="video/C">C</a>
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui hidden divider"></div>
+        <div class="ui tab active" data-tab="video/C++">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/Java">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/Python">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/PHP">
+            @include('layout.classify_list')
+        </div>
+        <div class="ui tab" data-tab="video/C">
+            @include('layout.classify_list')
         </div>
     </div>
 </div>
+<script src="/js/classify.js"></script>
 @stop
