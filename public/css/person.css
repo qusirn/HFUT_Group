@@ -1,0 +1,62 @@
+.containert {
+    width:1202px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.containertTitle {
+    width: 1202px;
+    height: 90px;
+    margin: auto;
+}
+.personal {
+    width: 1202px;
+    height: 730px;
+    margin: auto;
+}
+.personalmain{
+    width: 940px;
+    margin-left: 131px;
+}
+.name{
+    float: left;
+    line-height: 0;
+    margin-top: 11px;
+}
+.label{
+    margin-top: 35px;
+}
+.address{
+    margin-top: 40px;
+}
+.personcontent{
+    margin-top: 100px;
+}
+.info{
+    float: left;
+}
+.moreButton {
+    line-height: 20px;
+    font-size: 20px;
+    float: right;
+}
+.infotitle{
+    padding-top:10px;
+}
+.infoitem{
+    margin-top: 15px;
+}
+.cardimage{
+    margin-top: 12px;
+    margin-right: 10px;
+    float: left;
+}
+.introduce{
+    margin-top: 25px;
+}
+#icon{
+    float: left;
+}
