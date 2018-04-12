@@ -1,265 +1,191 @@
 @extends('layout.header_and_footer')
 @section('main_content')
-    <link href="/css/sweetalert.css" rel="stylesheet" type="text/css">
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/core.css" rel="stylesheet" type="text/css">
-    <link href="/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="/css/components.css" rel="stylesheet" type="text/css">
-    <link href="/css/pages.css" rel="stylesheet" type="text/css">
-    <link href="/css/menu.css" rel="stylesheet" type="text/css">
-    <link href="/css/responsive.css" rel="stylesheet" type="text/css">
-    <script src="/js/modernizr.min.js"></script>
-    <header id="topnav">
-        <div class="navbar-custom">
-            <div class="container">
-              <div id="navigation">
-                  <!-- Navigation Menu-->
-                  <ul class="navigation-menu">
-                      <li class="active">
-                          <a href="index.html"><i class="md md-home"></i> <span> 我的资料 </span> </a>
-                      </li>
-                      <li class="has-submenu">
-                          <a href="#"><i class="md md-palette "></i><span> 我的消息 </span> </a>
-                          <ul class="submenu">
-                            <li><a href="#">收到的消息</a></li>
-                            <li><a href="#">邮件</a></li>
-                            <li><a href="#">私信</a></li>
-                          </ul>
-                      </li>
-                      <li class="has-submenu">
-                          <a href="#"><i class="md md-invert-colors-on"></i> <span> 我的直播 </span> </a>
-                          <ul class="submenu">
-                              <li><a href="#">直播安排</a></li>
-                              <li><a href="#">直播记录</a></li>
-                              <li><a href="#">直播管理</a></li>
-                              <li><a href="#">观看记录</a></li>
-                          </ul>
-                      </li>
-                          <li class="has-submenu">
-                              <a href="#"><i class="md md-redeem"></i> <span> 我的等级 </span> </a>
-                          </li>
-                          <li class="has-submenu">
-                              <a href="#"><i class="md md-pages"></i><span>时间轴 </span> </a>
-                          </li>
-                    </ul>
-                       <!-- End navigation menu  -->
-               </div>
-          </div>
-      </div>
-  </header>
-  <div class="content-page">
-      <!-- Start content -->
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-12">
-                  <h4 class="pull-left page-title">我叫不重名</h4>
-                      <ol class="breadcrumb pull-right">
-                          <li><a href="#">XX直播</a></li>
-                          <li class="active">个人中心</li>
-                      </ol>
-                </div>
+<link rel="stylesheet" href="/css/person.css">
+<div class="personal">
+    <div class="ui horizontal divider">个人中心</div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class= "personalmain">
+        <div class="personaltop">
+            <div>
+                <img class="ui small left floated image" src="/img/userphoto.png">
+                <h2 class = "name">haooon</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
             </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <h5 class="pull-left page-title">等级LV2：</h5>
-                <div class="panel-body" style="float: left;">
-                  <div class="progress">
-                  <div class="progress-bar progress-bar-primary wow animated progress-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                  </div>
-                  60%
-                  </div>
-                </div>
-                <div style="float: left;padding: 8px"><a href="#">了解等级特权</a></div>
+            <div class="label">
+                <a class="ui blue basic label">JAVA<i class="icon close"></i></a>
+                <a class="ui blue basic label">PYTHON<i class="icon close"></i></a>
+                <a class="ui blue basic label">网络<i class="icon close"></i></a>
+            </div>
+            <div class="address">
+                <i id="icon" class="map outline icon"></i><p class="info">安徽合肥市&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <i id="icon" class="call square icon"></i><p class="info">18756493615&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <i id="icon" class="thumbs outline up icon"></i><p class="info">2,340赞</p>
             </div>
         </div>
-        <!-- Start Widget -->
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-lg-3">
-                <div class="mini-stat clearfix bx-shadow bg-info">
-                    <span class="mini-stat-icon"><i class="ion-social-usd"></i></span>
-                        <div class="mini-stat-info text-right">
-                            <span class="counter">15852</span>
-                            礼物收入
-                          </div>
-                    <div class="tiles-progress">
-                    <div class="m-t-20">
-                        <h5 class="text-uppercase text-white m-0">上周收入 <span class="pull-right">235</span></h5>
-                    </div>
+        <div class="personcontent">
+            <div class="ui top attached tabular menu">
+                <a class="active item">基本资料 </a>
+                <a class="item">修改头像 </a>
+                <a class="item">修改昵称 </a>
+                <a class="item">实名认证 </a>
+                <a class="item">绑定手机 </a>
+                <a class="item">修改邮箱 </a>
+                <div class="right menu">
+                    <div class="item">
+                        <button class="ui right labeled icon button"><i class="right arrow icon"></i> 开启直播 </button>
                     </div>
                 </div>
             </div>
-          <div class="col-md-6 col-sm-6 col-lg-3">
-              <div class="mini-stat clearfix bg-purple bx-shadow">
-                  <span class="mini-stat-icon"><i class="ion-ios7-cart"></i></span>
-                        <div class="mini-stat-info text-right">
-                        <span class="counter">956</span>
-                        点阅数
+            <div class="ui bottom attached segment">
+                <div class="ui cards">
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">未绑定手机</div>
+                            <div class="cardimage">
+                                <img src="/img/phone.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description"><p class="introduce">绑定手机可享受到手机相关的安全和提醒服务</p> </div>
+                            </div>
                         </div>
-                    <div class="tiles-progress">
-                          <div class="m-t-20">
-                              <h5 class="text-uppercase text-white m-0">增加值 <span class="pull-right">59</span></h5>
-                          </div>
-                      </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-lg-3">
-                <div class="mini-stat clearfix bg-success bx-shadow">
-                      <span class="mini-stat-icon"><i class="ion-eye"></i></span>
-                      <div class="mini-stat-info text-right">
-                          <span class="counter">20544</span>
-                          当前观看人数
+                        <div class="ui bottom attached button"><i class="add icon"></i> 立即绑定 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">邮箱未绑定</div>
+                            <div class="cardimage">
+                                <img src="/img/mail.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">您可以使用邮箱来保证您的用户安全 </div>
+                            </div>
                         </div>
-                    <div class="tiles-progress">
-                      <div class="m-t-20">
-                          <h5 class="text-uppercase text-white m-0">增加值<span class="pull-right">1026</span></h5>
-                      </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 绑定邮箱 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">实名认证</div>
+                            <div class="cardimage">
+                                <img id="icon" src="/img/renzheng.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">尚未实名认证，不能开启直播。 </div>
+                            </div>
+                        </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 实名认证 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">上传头像</div>
+                            <div class="cardimage">
+                                <img src="/img/userphotomini.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">已上传头像 </div>
+                            </div>
+                        </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 更换头像 </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-lg-3">
-                <div class="mini-stat clearfix bg-primary bx-shadow">
-                    <span class="mini-stat-icon"><i class="ion-android-contacts"></i></span>
-                    <div class="mini-stat-info text-right">
-                        <span class="counter">5210</span>
-                            总直播小时
-                    </div>
-                  <div class="tiles-progress">
-                      <div class="m-t-20">
-                          <h5 class="text-uppercase text-white m-0">已开播 <span class="pull-right">136 h</span></h5>
-                      </div>
-                  </div>
-                </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <h4 class="pull-left page-title"><i class="md md-tv"></i><span>&nbsp;我的录播</span></h4>
-                    <ol class="breadcrumb pull-right">
-                        <li><a href="#">查看更多<i class="md md-add"></i></a></li>
-                    </ol>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="portfolioFilter">
-                    <a href="#" data-filter="*" class="current">所有</a>
-                    <a href="#" data-filter=".webdesign">热度</a>
-                    <a href="#" data-filter=".graphicdesign">历史人数</a>
-                </div>
-            </div>
-        </div>
-        <div class="row port">
-            <div class="portfolioContainer">
-                <div class="col-sm-6 col-lg-3 col-md-4 webdesign illustrator">
-                    <div class="gal-detail thumb">
-                        <a href="/img/gallery/1.jpg" class="image-popup" title="Screenshot-1">
-                            <img src="/img/gallery/1.jpg" class="thumb-img" alt="work-thumbnail">
-                        </a>
-                        <h4>Gallary Image</h4>
-                    </div>
-                </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 graphicdesign illustrator photography">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/2.jpg" class="image-popup" title="Screenshot-2">
-                      <img src="/img/gallery/2.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 webdesign graphicdesign">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/3.jpg" class="image-popup" title="Screenshot-3">
-                      <img src="/img/gallery/3.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 illustrator photography">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/4.jpg" class="image-popup" title="Screenshot-4">
-                      <img src="/img/gallery/4.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 graphicdesign photography">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/5.jpg" class="image-popup" title="Screenshot-5">
-                      <img src="/img/gallery/5.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-                </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 webdesign photography">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/6.jpg" class="image-popup" title="Screenshot-6">
-                    <img src="/img/gallery/6.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 illustrator photography graphicdesign">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/7.jpg" class="image-popup" title="Screenshot-7">
-                      <img src="/img/gallery/7.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 graphicdesign photography webdesign">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/8.jpg" class="image-popup" title="Screenshot-8">
-                      <img src="/img/gallery/8.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 webdesign illustrator">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/9.jpg" class="image-popup" title="Screenshot-9">
-                      <img src="/img/gallery/9.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 photography graphicdesign">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/10.jpg" class="image-popup" title="Screenshot-10">
-                      <img src="/img/gallery/10.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 graphicdesign photography">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/11.jpg" class="image-popup" title="Screenshot-11">
-                      <img src="/img/gallery/11.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-          <div class="col-sm-6 col-lg-3 col-md-4 webdesign graphicdesign illustrator">
-              <div class="gal-detail thumb">
-                  <a href="/img/gallery/12.jpg" class="image-popup" title="Screenshot-12">
-                      <img src="/img/gallery/12.jpg" class="thumb-img" alt="work-thumbnail">
-                  </a>
-                  <h4>Gallary Image</h4>
-              </div>
-          </div>
-      </div>
     </div>
-</div> <!-- content -->
-<footer class="footer text-right">
-      2018 © 5A.
-</footer>
-<!-- jQuery  -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/goup.js"></script>
-<!-- counters  -->
-<script src="/js/jquery.waypoints.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
-<script src="/js/choice.js"></script>
-
+</div>
+<div class="ui hidden divider"></div>
+<div class="containertTitle">
+    <div class="ui horizontal divider">
+        我的录播
+    </div>
+    <div class="ui hidden divider"></div>
+    <a href="#"><span class="moreButton"><i class="list icon"></i></span></a>
+    <div class="ui hidden divider"></div>
+</div>
+<div class="containert">
+    <div class="ui special cards">
+        @for ($i = 0; $i < 8; $i++)
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="/img/card.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Fu</a>
+                <div class="meta">
+                    <span class="date">Create in Sep 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        @endfor
+    </div>
+</div>
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        个人信息修改
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="/img/userphoto.png">
+        </div>
+        <div class="description">
+            <div class="ui header">您可修改以下个人信息</div>
+            <div class="infoitem">
+                <div class="ui input">
+                    <p class="infotitle">昵称:&nbsp;&nbsp;</p>
+                    <input type="text" value="haooon"></input>
+                </div>
+            </div>
+            <div class="infoitem">
+                <div class="ui input">
+                    <p class="infotitle">生日:&nbsp;&nbsp;</p>
+                    <input type="text" value="1997-11-12"></input>
+                </div>
+            </div>
+            <div class="infoitem">
+                <div class="ui input">
+                    <p class="infotitle">学校:&nbsp;&nbsp;</p>
+                    <input type="text" value="合肥工业大学"></input>
+                </div>
+            </div>
+            <div class="infoitem">
+                <div class="ui input">
+                    <p class="infotitle">手机:&nbsp;&nbsp;</p>
+                    <input type="text" value="18756493615"></input>
+                </div>
+            </div>
+            <div class="infoitem">
+                <div class="ui input">
+                    <p class="infotitle">邮箱:&nbsp;&nbsp;</p>
+                    <input type="text" value="1163488165@qq.com"></input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            取消
+        </div>
+        <div class="ui positive right labeled icon button">
+            确认
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<script type="text/javascript" src="/js/openpopup.js"></script>
 @stop
