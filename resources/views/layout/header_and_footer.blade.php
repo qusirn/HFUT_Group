@@ -48,8 +48,8 @@
                 <a href="#" class="item">Articles</a>
                 <div class="ui small search right item">
                     <div class="ui icon input">
-                        <input class="prompt" type="text" placeholder="嘿~">
-                        <i class="search icon"></i>
+                        <input class="prompt" type="text" placeholder="嘿~" id="search_lives">
+                            <i class="search icon"></i>
                     </div>
                     <div class="results"></div>
                 </div>
