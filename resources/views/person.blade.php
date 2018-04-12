@@ -9,7 +9,7 @@
         <div class="personaltop">
             <div>
                 <img class="ui small left floated image" src="/img/userphoto.png">
-                <h2 class = "name">haooon</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
+                <h2 class = "name">{{ $student->s_username}}</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
             </div>
             <div class="label">
                 <a class="ui blue basic label">JAVA<i class="icon close"></i></a>
@@ -17,11 +17,16 @@
                 <a class="ui blue basic label">网络<i class="icon close"></i></a>
             </div>
             <div class="address">
-                <i id="icon" class="map outline icon"></i><p class="info">安徽合肥市&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <i id="icon" class="call square icon"></i><p class="info">18756493615&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <i id="icon" class="thumbs outline up icon"></i><p class="info">2,340赞</p>
+                <i id="icon" class="student icon"></i><p class="info">学生&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <i id="icon" class="call square icon"></i><p class="info">{{ $student->s_tel }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                @if ($student->s_email === '')
+                    <i id="icon" class="mail outline icon"></i><p class="info">暂未绑定</p>
+                @else
+                    <i id="icon" class="mail outline icon"></i><p class="info">{{ $student->s_email}}</p>
+                @endif
             </div>
         </div>
+
         <div class="personcontent">
             <div class="ui top attached tabular menu">
                 <a class="active item">基本资料 </a>
@@ -130,59 +135,62 @@
         @endfor
     </div>
 </div>
-<div class="ui modal">
-    <i class="close icon"></i>
-    <div class="header">
-        个人信息修改
+
+<form action="{{ route('update-student') }}" method="POST">
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            个人信息修改
+        </div>
+        <div class="image content">
+            <div class="ui medium image">
+                <img src="/img/userphoto.png">
+            </div>
+            <div class="description">
+                <div class="ui header">您可修改以下个人信息</div>
+                <div class="infoitem">
+                    <div class="ui input">
+                        <p class="infotitle">昵称:&nbsp;&nbsp;</p>
+                        <input type="text" value="{{ $student->s_username }}"></input>
+                    </div>
+                </div>
+                <div class="infoitem">
+                    <div class="ui input">
+                        <p class="infotitle">生日:&nbsp;&nbsp;</p>
+                        <input type="text" value="{{ $student->s_birth }}"></input>
+                    </div>
+                </div>
+                <div class="infoitem">
+                    <div class="ui input">
+                        <p class="infotitle">学校:&nbsp;&nbsp;</p>
+                        <input type="text" value="{{ $student->s_shool}}"></input>
+                    </div>
+                </div>
+                <div class="infoitem">
+                    <div class="ui input">
+                        <p class="infotitle">手机:&nbsp;&nbsp;</p>
+                        <input type="text" value="{{ $student->s_tel }}"></input>
+                    </div>
+                </div>
+                <div class="infoitem">
+                    <div class="ui input">
+                        <p class="infotitle">邮箱:&nbsp;&nbsp;</p>
+                        <input type="text" value="{{ $student->s_email }}"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                取消
+            </div>
+            <div class="ui positive right labeled icon button">
+                确认
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
     </div>
-    <div class="image content">
-        <div class="ui medium image">
-            <img src="/img/userphoto.png">
-        </div>
-        <div class="description">
-            <div class="ui header">您可修改以下个人信息</div>
-            <div class="infoitem">
-                <div class="ui input">
-                    <p class="infotitle">昵称:&nbsp;&nbsp;</p>
-                    <input type="text" value="haooon"></input>
-                </div>
-            </div>
-            <div class="infoitem">
-                <div class="ui input">
-                    <p class="infotitle">生日:&nbsp;&nbsp;</p>
-                    <input type="text" value="1997-11-12"></input>
-                </div>
-            </div>
-            <div class="infoitem">
-                <div class="ui input">
-                    <p class="infotitle">学校:&nbsp;&nbsp;</p>
-                    <input type="text" value="合肥工业大学"></input>
-                </div>
-            </div>
-            <div class="infoitem">
-                <div class="ui input">
-                    <p class="infotitle">手机:&nbsp;&nbsp;</p>
-                    <input type="text" value="18756493615"></input>
-                </div>
-            </div>
-            <div class="infoitem">
-                <div class="ui input">
-                    <p class="infotitle">邮箱:&nbsp;&nbsp;</p>
-                    <input type="text" value="1163488165@qq.com"></input>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui black deny button">
-            取消
-        </div>
-        <div class="ui positive right labeled icon button">
-            确认
-            <i class="checkmark icon"></i>
-        </div>
-    </div>
-</div>
+</form>
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>

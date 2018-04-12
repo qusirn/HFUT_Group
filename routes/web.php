@@ -26,15 +26,7 @@ Route::get('/home', function () {
 Route::get('/room/{id}', 'RoomController@room');
 Route::get('/video', 'VideoController@index');
 
-Route::get('/person', function () {
-    return view('person', [
-      'name' => 'Victoria',
-      'user' => '-1',
-      'statue' => [
-          'value' => 'none'
-        ],
-    ]);
-});
+Route::get('/person', 'StudentController@index');
 
 Route::get('/classify', function () {
     return view('classify',[
@@ -62,6 +54,8 @@ Route::get('/teacheropen', function () {
         ],
     ]);
 });
+
+
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');
