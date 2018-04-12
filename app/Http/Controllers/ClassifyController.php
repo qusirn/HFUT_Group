@@ -9,7 +9,7 @@ class ClassifyController extends Controller
 {
     //观看量前8直播列表
     public function index()
-    {dsadasd;
+    {
         $lives = \App\Model\Live::all()
                ->sortByDesc('l_looker_num')
                ->take(8);

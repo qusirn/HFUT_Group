@@ -45,6 +45,7 @@ Route::get('/classify', function () {
         ],
     ]);
 });
+Route::get('/search', 'SearchController@search');
 Route::get('/classify', 'ClassifyController@index');
 Route::get('/classify/php_live', 'ClassifyController@php_live');
 Route::get('/classify/java_live', 'ClassifyController@java_live');
