@@ -22,4 +22,9 @@ class StudentController extends Controller
             return view('joinus', ['messages' => Message::Message('', '', Message::none_user())]);
         }
     }
+
+    public function update()
+    {
+        return view('student_update');
+    }
 }
