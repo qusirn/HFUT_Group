@@ -27,7 +27,7 @@ Route::get('/room/{id}', 'RoomController@room');
 Route::get('/video', 'VideoController@index');
 
 Route::get('/person', 'StudentController@index');
-
+Route::get('/person/update', 'StudentController@update');
 Route::get('/classify', function () {
     return view('classify',[
       'name' => -1,
