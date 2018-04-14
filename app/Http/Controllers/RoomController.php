@@ -14,12 +14,6 @@ class RoomController extends Controller {
      */
     public function room(Request $request)
     {
-        // $request->session()->forget('messages');
-        if($request->session()->has('messages')){
-            $messages = $request->session()->get('messages');
-            return view('room', $messages);
-        }else{
-            return view('room', ['messages' => Message::Message('', '', Message::none_user())]);
-        }
+        return view('room');
     }
 }
