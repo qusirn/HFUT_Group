@@ -56,4 +56,4 @@ var vm = new Vue({
 
 $('.special.cards .image').dimmer({
     on: 'hover'
-}) ;
+});
