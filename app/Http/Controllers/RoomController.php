@@ -16,4 +16,10 @@ class RoomController extends Controller {
     {
         return view('room');
     }
+
+    public function live(Request $request)
+    {
+        return view('live');
+    }
+
 }
