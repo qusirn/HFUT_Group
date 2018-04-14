@@ -1,5 +1,7 @@
 @extends('layout.header_and_footer')
 @section('main_content')
+<script src="/js/AgoraRTCSDK-2.1.1.js"></script>
+<script src="/js/live.js"></script>
 <div class="ui container large center aligned grid live_page">
     <div class="ui container grid center aligned">
         <div class="ui fourteen wide column room_message left aligned">
@@ -18,6 +20,7 @@
             <a class="ui violet label">Learning</a> &nbsp
             <a class="ui purple label">haooon</a> &nbsp
         </div>
+        <button type="button" name="button" onclick="join()" value="开启视频直播"></button>
         <h4 class="ui horizontal divider header">
             <i class="tag icon"></i>
             直播内容
@@ -30,15 +33,17 @@
                 <a class="item" data-tab="fourth">代码</a>
             </div>
             <div class="ui tab active" data-tab="first">
+                <div id="video">
+                    <div id="agora_local"></div>
+                </div>
             </div>
             <div class="ui tab" data-tab="second">
-              2
+                2
             </div>
             <div class="ui tab" data-tab="third">
-              3
             </div>
             <div class="ui tab" data-tab="fourth">
-              4
+                4
             </div>
         </div>
         <div class="ui five wide column segment left aligned">
