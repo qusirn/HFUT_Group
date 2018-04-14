@@ -33,8 +33,8 @@ $(document)
         });
 
         $('#search_lives').on('keypress', function(){
-            if (event.keyCode==13){
-                window.location.href="/search?keyword=" + $(this).val();
+            if (event.keyCode == 13){
+                window.location.href = "/search?keyword=" + $(this).val();
             }
         });
 
