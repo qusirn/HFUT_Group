@@ -1,195 +1,273 @@
 @extends('layout.header_and_footer')
 @section('main_content')
 <link rel="stylesheet" href="/css/person.css">
-<div class="main ui container">
-    <h2 class="ui center aligned header">
-        <img src="/img/head tiny/patrick.png" class="ui circular image">
-        <p>{{ $student->s_username }}</p>
-        <a class="ui yellow label">Java</a>
-        <a class="ui green label">PHP</a>
-        <a class="ui teal label">Python</a>
-    </h2>
-    <div class="ui divider"></div>
-    <div class="ui three column very padded doubling stackable grid container divided" >
-        <div class="column">
-            <h2 class="ui header">
-                <i class="user icon"></i>
-                <div class="content">
-                    基本信息
-                </div>
-                <i class="settings icon tiny"></i>
-            </h2>
+<div class="personal">
+    <div class="ui horizontal divider">个人中心</div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class= "personalmain">
+        <div class="personaltop">
+            <div>
+                <img class="ui small left floated image" src="/img/userphoto.png">
+                <h2 class = "name">hooon</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
+            </div>
+            <div class="label">
+                <a class="ui blue basic label">JAVA<i class="icon close"></i></a>
+                <a class="ui blue basic label">PYTHON<i class="icon close"></i></a>
+                <a class="ui blue basic label">网络<i class="icon close"></i></a>
+            </div>
+            <div class="address">
+                <i id="icon" class="student icon"></i><p class="info">学生&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <i id="icon" class="call square icon"></i><p class="info">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <i id="icon" class="mail outline icon"></i><p class="info">暂未绑定</p>
+                    <i id="icon" class="mail outline icon"></i><p class="info"></p>
+            </div>
+        </div>
 
-            <div class="ui items">
-                <div class="item">
-                    <div class="content">
-                        <div class="header">身份</div>
-                        <div class="meta">
-                            <a class="ui violet label">
-                                <i id="icon" class="student icon"></i><p class="info">学生&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">手机号</div>
-                        <div class="meta">
-                            <i id="icon" class="call square icon"></i><p class="info">{{ $student->s_tel }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">电子邮箱</div>
-                        <div class="meta">
-                        @if ($student->s_email === '')
-                            <i id="icon" class="mail outline icon"></i><p class="info">暂未绑定</p>
-                        @else
-                            <i id="icon" class="mail outline icon"></i><p class="info">{{ $student->s_email}}</p>
-                        @endif
-                        </div>
+        <div class="personcontent">
+            <div class="ui top attached tabular menu">
+                <a class="item active" data-tab="infomation">基本资料 </a>
+                <a class="item" data-tab="head">修改头像 </a>
+                <a class="item" data-tab="name">修改昵称 </a>
+                <a class="item" data-tab="real_name">实名认证 </a>
+                <a class="item" data-tab="phone">绑定手机 </a>
+                <a class="item" data-tab="email">修改邮箱 </a>
+                <div class="right menu">
+                    <div class="item">
+                        <button class="ui right labeled icon button"><i class="right arrow icon"></i> 开启直播 </button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column">
-            <h2 class="ui header">
-                <img class="ui image" src="/img/person/school.png">
-                <div class="content">
-                    学校信息
-                </div>
-            </h2>
-            <div class="ui items">
-                <div class="item">
-                    <div class="content">
-                        <div class="header">学校</div>
-                        <div class="meta">
-                            <a class="ui orange label">
-                            @if ($student->s_school == '')
-                                <i id="icon" class="flag icon"></i><p class="info">合肥工业大学</p>
-                            @else
-                                <i id="icon" class="flag icon"></i><p class="info">{{ $student->s_school}}</p>
-                            @endif
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">专业</div>
-                        <div class="meta">
-                            @if ($student->s_major == '')
-                                <i id="icon" class="circle icon"></i></i><p class="info">暂未绑定</p>
-                            @else
-                                <i id="icon" class="circle icon"></i><p class="info">{{ $student->s_major}}</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">学号</div>
-                        <div class="meta">
-                        @if ($student->s_code == '')
-                            <i id="icon" class="add user icon"></i></i><p class="info">暂未绑定</p>
-                        @else
-                            <i id="icon" class="add user icon"></i></i><p class="info">{{ $student->s_code}}</p>
-                        @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <h2 class="ui header">
-                <i class="unlock alternate icon"></i>
-                <div class="content">
-                    帐号信息
-                </div>
-            </h2>
-            <div class="ui items">
-                <div class="item">
-                    <div class="content">
-                        <div class="header">暂未定义</div>
-                        <div class="meta">
-                            <a class="ui red label">
-                                <i id="icon" class="student icon"></i><p class="info">暂未定义&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">暂未定义</div>
-                        <div class="meta">
-                            <i id="icon" class="call square icon"></i><p class="info">暂未定义&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">暂未定义</div>
-                        <div class="meta">
-                        @if ($student->s_email === '')
-                            <i id="icon" class="mail outline icon"></i><p class="info">暂未绑定</p>
-                        @else
-                            <i id="icon" class="mail outline icon"></i><p class="info">暂未定义</p>
-                        @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui hidden divider"></div>
-    <a href="/person/update"><button class="fluid ui button" >编辑个人资料</button></a>
-    <div class="ui hidden divider"></div>
-    <div class="ui hidden divider"></div>
-    <div class="ui hidden divider"></div>
-    <div class="ui hidden divider"></div>
-    <div class="ui horizontal divider">
-        观看历史
-    </div>
-    <div class="ui hidden divider"></div>
-    <div class="ui hidden divider"></div>
-
-    <div class="containert">
-        <div class="ui four column very padded doubling stackable grid container">
-            @for ($i = 0; $i < 8; $i++)
-            <div class="column">
-                <div class="ui special cards">
+            <div class="ui bottom attached tab segment active" data-tab="infomation">
+                <div class="ui cards">
                     <div class="card">
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button">Add Friend</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="/img/card.jpg">
-                        </div>
                         <div class="content">
-                            <a class="header">Team Fu</a>
-                            <div class="meta">
-                                <span class="date">Create in Sep 2014</span>
+                            <div class="header">未绑定手机</div>
+                            <div class="cardimage">
+                                <img src="/img/phone.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description"><p class="introduce">绑定手机可享受到手机相关的安全和提醒服务</p> </div>
                             </div>
                         </div>
-                        <div class="extra content">
-                            <a>
-                                <i class="users icon"></i>
-                                2 Members
-                            </a>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 立即绑定 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">邮箱未绑定</div>
+                            <div class="cardimage">
+                                <img src="/img/mail.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">您可以使用邮箱来保证您的用户安全 </div>
+                            </div>
                         </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 绑定邮箱 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">实名认证</div>
+                            <div class="cardimage">
+                                <img id="icon" src="/img/renzheng.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">尚未实名认证，不能开启直播。 </div>
+                            </div>
+                        </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 实名认证 </div>
+                    </div>
+                    <div class="card">
+                        <div class="content">
+                            <div class="header">上传头像</div>
+                            <div class="cardimage">
+                                <img src="/img/userphotomini.png"></img>
+                            </div>
+                            <div class="introduce">
+                                <div class="description">已上传头像 </div>
+                            </div>
+                        </div>
+                        <div class="ui bottom attached button"><i class="add icon"></i> 更换头像 </div>
                     </div>
                 </div>
             </div>
-            @endfor
+            <div class="ui bottom attached tab segment" data-tab="head">
+                <div class="inside">
+                    <p>请选择一个新照片进行上传编辑头像保存后，你可以需要刷新一下本页面（按F5键），才能查看最新的头像效果。</p>
+                    <div class="info">
+                        <img class="ui medium circular image" src="/img/userphoto.png">
+                    </div>
+                    <div class="headbutton">
+                        <button class="fluid ui button">上传头像</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="name">
+                <div class="inside">
+                    <h4>当前昵称：&nbsp;&nbsp;haooon</h4>
+                    <form class="ui form">
+                        <div class="three wide field">
+                            <label>新昵称</label>
+                            <input type="text" name="" placeholder="请输入新的昵称">
+                        </div>
+                        <button class="ui button" type="submit">确认修改</button>
+                    </form>
+                    <div class="ui hidden divider"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>说明：</p>
+                    <p>1.修改昵称后，请用新昵称和原来的密码登录，旧的昵称将无法登录。</p>
+                    <p>2.第一次可免费修改昵称。</p>
+                    <p>3.新昵称需符合注册规范，可使用数字，字母，汉字，不超过5-30个字符。</p>
+                    <p>4.如遇服务器更新或其它问题导致昵称修改失败，请联系我们。</p>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="real_name">
+                <div class="inside">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>身份证</label>
+                            <input type="text" name="" placeholder="身份证号码">
+                        </div>
+                        <div class="field">
+                            <label>姓名</label>
+                            <input type="text" name="" placeholder="姓名">
+                        </div>
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden">
+                                <label>我同意本服务客户隐私条款</label>
+                            </div>
+                        </div>
+                        <button class="ui button" type="submit">提交认证</button>
+                    </form>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="phone">
+                <div class="inside">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>手机号码</label>
+                            <input type="text" name="" placeholder="手机号码">
+                        </div>
+                        <div class="field">
+                            <label>验证码</label>
+                            <input type="text" name="" placeholder="验证码">
+                        </div>
+                        <div class="ui hidden divider"></div>
+                        <p>您将会收到一个验证码，验证码验证过程不收取任何费用</p>
+                        <div class="ui hidden divider"></div>
+                        <button class="ui button" type="submit">确认绑定</button>
+                    </form>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="email">
+                <div class="inside">
+                    <form class="ui form">
+                        <div class="field">
+                            <label>原邮箱</label>
+                            <input type="text" name="" placeholder="原邮箱">
+                        </div>
+                        <div class="field">
+                            <label>新邮箱</label>
+                            <input type="text" name="" placeholder="新邮箱">
+                        </div>
+                        <div class="ui hidden divider"></div>
+                        <div class="ui hidden divider"></div>
+                        <button class="ui button" type="submit">确认修改</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<div class="ui hidden divider"></div>
+<div class="containertTitle">
+    <div class="ui horizontal divider">
+        我的录播
+    </div>
+    <div class="ui hidden divider"></div>
+    <a href="#"><span class="moreButton"><i class="list icon"></i></span></a>
+    <div class="ui hidden divider"></div>
+</div>
+<div class="containert">
+    <div class="ui special cards">
+        @for ($i = 0; $i < 8; $i++)
+        <div class="card">
+            <div class="blurring dimmable image">
+                <div class="ui dimmer">
+                    <div class="content">
+                        <div class="center">
+                            <div class="ui inverted button">Add Friend</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="/img/card.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Team Fu</a>
+                <div class="meta">
+                    <span class="date">Create in Sep 2014</span>
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="users icon"></i>
+                    2 Members
+                </a>
+            </div>
+        </div>
+        @endfor
+    </div>
+</div>
 
-
-
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        个人信息修改
+    </div>
+    <div class="image content">
+        <div class="ui medium image">
+            <img src="/img/userphoto.png">
+        </div>
+        <div class="description">
+            <form class="ui form">
+                <div class="inline fields">
+                    <div class="field">
+                        <label>昵称</label>
+                        <input type="text" name="" placeholder="昵称">
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>学校</label>
+                        <input type="text" name="last-name" placeholder="学校">
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>手机</label>
+                        <input type="text" name="" placeholder="手机">
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>邮箱</label>
+                        <input type="text" name="last-name" placeholder="邮箱">
+                    </div>
+                </div>
+                <button class="ui button" type="submit">确认</button>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui black deny button">
+            关闭
+        </div>
+    </div>
+</div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<script type="text/javascript" src="/js/openpopup.js"></script>
+<script type="text/javascript" src="/js/tab.js"></script>
 @stop
