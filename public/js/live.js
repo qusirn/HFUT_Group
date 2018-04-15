@@ -100,7 +100,6 @@ function join() {
 }
 
 function leave() {
-    document.getElementById("leave").disabled = true;
     client.leave(function () {
         console.log("Leavel channel successfully");
     }, function (err) {
@@ -117,8 +116,8 @@ function publish() {
 }
 
 function unpublish() {
-    document.getElementById("publish").disabled = false;
-    document.getElementById("unpublish").disabled = true;
+    // document.getElementById("publish").disabled = false;
+    // document.getElementById("unpublish").disabled = true;
     client.unpublish(localStream, function (err) {
         console.log("Unpublish local stream failed" + err);
     });
@@ -164,4 +163,40 @@ $(document).ready(function(e) {
 	});
 
     $('.ui.dropdown').dropdown();
+
+    $('#head_live_button').click(function() {
+        if(!$("[name='check-1']").is(":checked")) {
+            $("[data-tab='first']").click();
+            join();
+        }else {
+            unpublish();
+            localStream.close();
+            localStream.stop();
+            leave();
+        }
+    });
+
+    $('#ppt_live_button').click(function(){
+        if(!$("[name='check-2']").is(":checked")) {
+            $("[data-tab='second']").click();
+        }else {
+
+        }
+    });
+
+    $('#board_live_button').click(function() {
+        if(!$("[name='check-3']").is(":checked")) {
+            $("[data-tab='third']").click();
+        }else {
+
+        }
+    });
+
+    $('#code_live_button').click(function() {
+        if(!$("[name='check-4']").is(":checked")) {
+            $("[data-tab='fourth']").click();
+        }else {
+
+        }
+    });
 });
