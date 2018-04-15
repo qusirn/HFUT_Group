@@ -1,5 +1,6 @@
 @extends('layout.header_and_footer')
 @section('main_content')
+
 <script src="/js/AgoraRTCSDK-2.1.1.js"></script>
 <script src="/js/live.js"></script>
 <script src="/js/lc_switch.js" type="text/javascript"></script>
@@ -39,7 +40,8 @@
                 </div>
             </div>
             <div class="ui tab" data-tab="second">
-                2
+                <div id="wbHost"></div>
+                <div id="videoContainer"></div>
             </div>
             <div class="ui tab" data-tab="third">
             </div>
@@ -117,7 +119,7 @@
         <div class="ui container text five column grid">
             <div class="statistic column">
                 <div class="value">
-                    <div class="slide_button">
+                    <div id="head_live_button" class="slide_button">
                         <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
@@ -127,8 +129,8 @@
             </div>
             <div class="statistic column">
                 <div class="value">
-                    <div class="slide_button">
-                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    <div id="ppt_live_button" class="slide_button">
+                        <input type="checkbox" name="check-2" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
                 <div class="label">
@@ -137,8 +139,8 @@
             </div>
             <div class="statistic column">
                 <div class="value">
-                    <div class="slide_button">
-                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    <div id="board_live_button" class="slide_button">
+                        <input type="checkbox" name="check-3" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
                 <div class="label">
@@ -147,8 +149,8 @@
             </div>
             <div class="statistic column">
                 <div class="value">
-                    <div class="slide_button">
-                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    <div id="code_live_button" class="slide_button">
+                        <input type="checkbox" name="check-4" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
                 <div class="label">
@@ -170,6 +172,22 @@
             </div>
             <div class="ui four wide column forbid">
                 <button class="orange ui button">禁封用户</button>
+            </div>
+        </div>
+        <div class="ui container ten wide column grid">
+            <div class="ui fluid selection dropdown six wide column">
+                <input type="hidden" name="user">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Friend</div>
+                <div class="menu">
+                    <div class="item" data-value="jenny">
+                        <img class="ui mini avatar image" src="/img/head tiny/jenny.jpg">
+                        Jenny Hess
+                    </div>
+                </div>
+            </div>
+            <div class="ui four wide column forbid">
+                <button class="green ui button">解封用户</button>
             </div>
         </div>
         <div class="ui container ten wide column grid">

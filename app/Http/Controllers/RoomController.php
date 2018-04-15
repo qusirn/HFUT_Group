@@ -22,4 +22,9 @@ class RoomController extends Controller {
         return view('live');
     }
 
+    public function host_board(Request $request)
+    {
+        return view('host_board');
+    }
+
 }

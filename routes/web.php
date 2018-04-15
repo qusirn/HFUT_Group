@@ -58,6 +58,7 @@ Route::get('/teacheropen', function () {
 });
 
 
+Route::get('/host_board/{id}', 'RoomController@host_board');
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');

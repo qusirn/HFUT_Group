@@ -111,3 +111,10 @@
 .exit {
     margin-top: 10px;
 }
+
+.slide_button {
+    /* background: red; */
+    width: 70%;
+    border-radius: 15px;
+    margin-left: 15%;
+}
