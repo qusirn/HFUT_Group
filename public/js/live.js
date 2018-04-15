@@ -177,20 +177,13 @@ $(document).ready(function(e) {
     });
 
     $('#ppt_live_button').click(function(){
-        if(!$("[name='check-2']").is(":checked")) {
-            $("[data-tab='second']").click();
-        }else {
-
-        }
-    });
-
-    $('#board_live_button').click(function() {
         if(!$("[name='check-3']").is(":checked")) {
             $("[data-tab='third']").click();
         }else {
 
         }
     });
+
 
     $('#code_live_button').click(function() {
         if(!$("[name='check-4']").is(":checked")) {
