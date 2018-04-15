@@ -12,6 +12,18 @@ class PageController extends Controller {
      *
      * @return Response
      */
+
+     /**
+      *@SWG\GET(path="/joinus",
+      *  tags={"user"},
+      *  summary="页面控制器",
+      *  description="如用户未登录，返回登录页面",
+      *  operationId="joinus",
+      *  @SWG\Parameter(in="path",name="$request",type="string",description="URL",required=true,
+      *  ),
+      *  @SWG\Response(response="default", description="操作成功")
+      *  )
+      */
     public function joinus(Request $request)
     {
         if($request->session()->has('messages')){

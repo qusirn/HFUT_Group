@@ -12,6 +12,17 @@ class RoomController extends Controller {
      *
      * @return Response
      */
+     /**
+      *@SWG\GET(path="/room/{id}",
+      *  tags={"room"},
+      *  summary="直播间",
+      *  description="返回直播间页面",
+      *  operationId="room",
+      *  @SWG\Parameter(in="path",name="$request",type="string",description="房间号",required=true,
+      *  ),
+      *  @SWG\Response(response="default", description="操作成功")
+      *  )
+      */
     public function room(Request $request)
     {
         // $request->session()->forget('messages');

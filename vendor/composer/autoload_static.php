@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1e2641e6950173318dbc327201b2f170
+class ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -16,6 +16,7 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -53,6 +54,7 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Swagger\\' => 8,
         ),
         'R' => 
         array (
@@ -191,6 +193,10 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -345,6 +351,9 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\RoomController' => __DIR__ . '/../..' . '/app/Http/Controllers/RoomController.php',
+        'App\\Http\\Controllers\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SearchController.php',
+        'App\\Http\\Controllers\\SmsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SmsController.php',
+        'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -360,6 +369,7 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
         'App\\Model\\Teacher' => __DIR__ . '/../..' . '/app/Model/Teacher.php',
         'App\\Model\\Video' => __DIR__ . '/../..' . '/app/Model/Video.php',
         'App\\Model\\WatchHistory' => __DIR__ . '/../..' . '/app/Model/WatchHistory.php',
+        'App\\Model\\YunPian' => __DIR__ . '/../..' . '/app/Model/YunPian.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -3367,6 +3377,47 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'StudentTableSeeder' => __DIR__ . '/../..' . '/database/seeds/StudentsTableSeeder.php',
+        'Swagger\\Analyser' => __DIR__ . '/..' . '/zircote/swagger-php/src/Analyser.php',
+        'Swagger\\Analysis' => __DIR__ . '/..' . '/zircote/swagger-php/src/Analysis.php',
+        'Swagger\\Annotations\\AbstractAnnotation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/AbstractAnnotation.php',
+        'Swagger\\Annotations\\Contact' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Contact.php',
+        'Swagger\\Annotations\\Definition' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Definition.php',
+        'Swagger\\Annotations\\Delete' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Delete.php',
+        'Swagger\\Annotations\\ExternalDocumentation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/ExternalDocumentation.php',
+        'Swagger\\Annotations\\Get' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Get.php',
+        'Swagger\\Annotations\\Head' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Head.php',
+        'Swagger\\Annotations\\Header' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Header.php',
+        'Swagger\\Annotations\\Info' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Info.php',
+        'Swagger\\Annotations\\Items' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Items.php',
+        'Swagger\\Annotations\\License' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/License.php',
+        'Swagger\\Annotations\\Operation' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Operation.php',
+        'Swagger\\Annotations\\Options' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Options.php',
+        'Swagger\\Annotations\\Parameter' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Parameter.php',
+        'Swagger\\Annotations\\Patch' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Patch.php',
+        'Swagger\\Annotations\\Path' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Path.php',
+        'Swagger\\Annotations\\Post' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Post.php',
+        'Swagger\\Annotations\\Property' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Property.php',
+        'Swagger\\Annotations\\Put' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Put.php',
+        'Swagger\\Annotations\\Response' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Response.php',
+        'Swagger\\Annotations\\Schema' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Schema.php',
+        'Swagger\\Annotations\\SecurityScheme' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/SecurityScheme.php',
+        'Swagger\\Annotations\\Swagger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Swagger.php',
+        'Swagger\\Annotations\\Tag' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Tag.php',
+        'Swagger\\Annotations\\Xml' => __DIR__ . '/..' . '/zircote/swagger-php/src/Annotations/Xml.php',
+        'Swagger\\Context' => __DIR__ . '/..' . '/zircote/swagger-php/src/Context.php',
+        'Swagger\\Logger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Logger.php',
+        'Swagger\\Processors\\AugmentDefinitions' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentDefinitions.php',
+        'Swagger\\Processors\\AugmentOperations' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentOperations.php',
+        'Swagger\\Processors\\AugmentParameters' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentParameters.php',
+        'Swagger\\Processors\\AugmentProperties' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/AugmentProperties.php',
+        'Swagger\\Processors\\BuildPaths' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/BuildPaths.php',
+        'Swagger\\Processors\\CleanUnmerged' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/CleanUnmerged.php',
+        'Swagger\\Processors\\HandleReferences' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/HandleReferences.php',
+        'Swagger\\Processors\\InheritProperties' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/InheritProperties.php',
+        'Swagger\\Processors\\MergeIntoSwagger' => __DIR__ . '/..' . '/zircote/swagger-php/src/Processors/MergeIntoSwagger.php',
+        'Swagger\\Serializer' => __DIR__ . '/..' . '/zircote/swagger-php/src/Serializer.php',
+        'Swagger\\StaticAnalyser' => __DIR__ . '/..' . '/zircote/swagger-php/src/StaticAnalyser.php',
+        'Swagger\\Util' => __DIR__ . '/..' . '/zircote/swagger-php/src/Util.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
@@ -4041,10 +4092,10 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$classMap;
 
         }, null, ClassLoader::class);
     }

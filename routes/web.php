@@ -56,6 +56,10 @@ Route::get('/teacheropen', function () {
     ]);
 });
 
+Route::group(['prefix' => 'swagger'], function () {
+    Route::get('json', 'SwaggerController@getJSON');
+    Route::get('my-data', 'SwaggerController@getMyData');
+});
 
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');

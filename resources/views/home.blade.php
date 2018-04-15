@@ -16,10 +16,10 @@
         </li>
     </transition-group>
     <div class="bullet">
-        <span v-for="(item,index) in img.length" :class="{'active':index === mark}"
+        <span v-for="(item,index) in img.length" :class="{'activeBullet':index === mark}"
          @click="change(index)" :key="index"></span>
     </div>
-    <div class="switch">
+    <div class="switches">
         <span class="prev" @click="prev">&lt;</span>
         <span class="next" @click="next">&gt;</span>
     </div>
