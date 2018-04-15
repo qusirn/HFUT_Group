@@ -20,7 +20,7 @@
             <a class="ui violet label">Learning</a> &nbsp
             <a class="ui purple label">haooon</a> &nbsp
         </div>
-        <button type="button" name="button" onclick="join()" value="开启视频直播"></button>
+
         <h4 class="ui horizontal divider header">
             <i class="tag icon"></i>
             直播内容
@@ -38,7 +38,8 @@
                 </div>
             </div>
             <div class="ui tab" data-tab="second">
-                2
+                <div id="wbHost"></div>
+                <div id="videoContainer"></div>
             </div>
             <div class="ui tab" data-tab="third">
             </div>

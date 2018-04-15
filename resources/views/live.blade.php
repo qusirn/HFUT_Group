@@ -2,6 +2,8 @@
 @section('main_content')
 
 <script src="/js/AgoraRTCSDK-2.1.1.js"></script>
+<script src="/js/AgoraWBSDK-1.0.0.js"></script>
+<script src="/js/script-host.js"></script>
 <script src="/js/live.js"></script>
 <script src="/js/lc_switch.js" type="text/javascript"></script>
 <div class="ui container large center aligned grid live_page">
@@ -39,9 +41,8 @@
                     <div id="agora_local"></div>
                 </div>
             </div>
-            <div class="ui tab" data-tab="second">
-                <div id="wbHost"></div>
-                <div id="videoContainer"></div>
+            <div class="ui tab board" data-tab="second">
+
             </div>
             <div class="ui tab" data-tab="third">
             </div>
@@ -129,22 +130,22 @@
             </div>
             <div class="statistic column">
                 <div class="value">
-                    <div id="ppt_live_button" class="slide_button">
+                    <div id="board_live_button" class="slide_button">
                         <input type="checkbox" name="check-2" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
                 <div class="label">
-                    ppt
+                    白板
                 </div>
             </div>
             <div class="statistic column">
                 <div class="value">
-                    <div id="board_live_button" class="slide_button">
+                    <div id="ppt_live_button" class="slide_button">
                         <input type="checkbox" name="check-3" value="4" class="lcs_check" autocomplete="off" />
                     </div>
                 </div>
                 <div class="label">
-                    画板
+                    ppt
                 </div>
             </div>
             <div class="statistic column">

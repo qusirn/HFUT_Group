@@ -14,7 +14,6 @@ class RoomController extends Controller {
      */
     public function room(Request $request)
     {
-<<<<<<< HEAD
         // $request->session()->forget('messages');
         if($request->session()->has('messages')){
             $messages = $request->session()->get('messages');
@@ -22,9 +21,7 @@ class RoomController extends Controller {
         }else{
             return view('room', ['messages' => Message::Message('error', 'unlogin', Message::none_user())]);
         }
-=======
         return view('room');
->>>>>>> 5b643f378bd1761b7831e01ab9d9f6af161b94be
     }
 
     public function live(Request $request)

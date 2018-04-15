@@ -35,8 +35,8 @@
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <a class="item" href="/logout" id="logout"><i class="red sign out icon"></i><span style="color:red;"> Logout</span></a>
-                        <a class="item" href="#link2"><i class="users icon"></i> Browse</a>
-                        <a class="item" href="#link3"><i class="search icon"></i> Search</a>
+                        <a class="item" href="/person"><i class="users icon"></i> 个人中心</a>
+                        <!-- <a class="item" href="#link3"><i class="search icon"></i> Search</a> -->
                     </div>
                 </div>
                 @else
@@ -45,7 +45,7 @@
                     Login
                 </a>
                 @endif
-                <a href="#" class="item">Articles</a>
+                <!-- <a href="#" class="item">Articles</a> -->
                 <div class="ui small search right item">
                     <div class="ui icon input">
                         <input class="prompt" type="text" placeholder="嘿~" id="search_lives">
