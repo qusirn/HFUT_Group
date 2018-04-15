@@ -30,7 +30,19 @@ class RoomController extends Controller {
             $messages = $request->session()->get('messages');
             return view('room', $messages);
         }else{
-            return view('room', ['messages' => Message::Message('', '', Message::none_user())]);
+            return view('room', ['messages' => Message::Message('error', 'unlogin', Message::none_user())]);
         }
+        return view('room');
     }
+
+    public function live(Request $request)
+    {
+        return view('live');
+    }
+
+    public function host_board(Request $request)
+    {
+        return view('host_board');
+    }
+
 }

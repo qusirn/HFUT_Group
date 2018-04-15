@@ -24,6 +24,7 @@ Route::get('/home', function () {
     ]);
 });
 Route::get('/room/{id}', 'RoomController@room');
+Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');
 
 Route::get('/person', 'StudentController@index');
@@ -61,6 +62,7 @@ Route::group(['prefix' => 'swagger'], function () {
     Route::get('my-data', 'SwaggerController@getMyData');
 });
 
+Route::get('/host_board/{id}', 'RoomController@host_board');
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');

@@ -1,59 +1,54 @@
 var vm = new Vue({
-    el:'.carousel',
-    data:{
-        mark:0,
-        img:[
+    el: '.carousel',
+    data: {
+        mark: 0,
+        img: [
             '/img/a1.jpg',
             '/img/a2.jpg',
             '/img/a3.jpg',
             '/img/a4.jpg'
         ],
-        time:null
+        time: null
     },
-    methods:{   //添加方法
-        change(i){
-            this.mark = i;
+    methods: { // 添加方法
+        change (i) {
+            this.mark = i
         },
-        prev(){
-            this.mark--;
-            if(this.mark === -1){
-                this.mark = 3;
-                return
+        prev () {
+            this.mark--
+            if (this.mark === -1) {
+                this.mark = 3
             }
         },
-        next(){
-            this.mark++;
-            if(this.mark === 4){
-                this.mark = 0;
-                return
+        next () {
+            this.mark++
+            if (this.mark === 4) {
+                this.mark = 0
             }
         },
-        autoPlay(){
-            this.mark++;
-            if(this.mark === 4){
-                this.mark = 0;
-                return
+        autoPlay () {
+            this.mark++
+            if (this.mark === 4) {
+                this.mark = 0
             }
         },
-        play(){
-            this.time = setInterval(this.autoPlay,3000);
+        play () {
+            this.time = setInterval(this.autoPlay, 3000)
         },
-        enter(){
+        enter () {
             console.log('enter')
-            clearInterval(this.time);
+            clearInterval(this.time)
         },
-        leave(){
+        leave () {
             console.log('leave')
-            this.play();
+            this.play()
         }
     },
-    created(){
+    created () {
         this.play()
     }
 })
 
-
-
 $('.special.cards .image').dimmer({
     on: 'hover'
-});
+})
