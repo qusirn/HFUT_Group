@@ -24,6 +24,7 @@ Route::get('/home', function () {
     ]);
 });
 Route::get('/room/{id}', 'RoomController@room');
+Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');
 
 Route::get('/person', 'StudentController@index');

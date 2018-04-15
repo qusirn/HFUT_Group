@@ -2,6 +2,7 @@
 @section('main_content')
 <script src="/js/AgoraRTCSDK-2.1.1.js"></script>
 <script src="/js/live.js"></script>
+<script src="/js/lc_switch.js" type="text/javascript"></script>
 <div class="ui container large center aligned grid live_page">
     <div class="ui container grid center aligned">
         <div class="ui fourteen wide column room_message left aligned">
@@ -20,7 +21,7 @@
             <a class="ui violet label">Learning</a> &nbsp
             <a class="ui purple label">haooon</a> &nbsp
         </div>
-        <button type="button" name="button" onclick="join()" value="开启视频直播"></button>
+
         <h4 class="ui horizontal divider header">
             <i class="tag icon"></i>
             直播内容
@@ -107,8 +108,76 @@
                 </form>
             </div>
         </div>
+
+        <h4 class="ui horizontal divider header controller">
+            <i class="settings icon"></i>
+            控制面板
+        </h4>
+
+        <div class="ui container text five column grid">
+            <div class="statistic column">
+                <div class="value">
+                    <div class="slide_button">
+                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="label">
+                    大头直播
+                </div>
+            </div>
+            <div class="statistic column">
+                <div class="value">
+                    <div class="slide_button">
+                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="label">
+                    ppt
+                </div>
+            </div>
+            <div class="statistic column">
+                <div class="value">
+                    <div class="slide_button">
+                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="label">
+                    画板
+                </div>
+            </div>
+            <div class="statistic column">
+                <div class="value">
+                    <div class="slide_button">
+                        <input type="checkbox" name="check-1" value="4" class="lcs_check" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="label">
+                    代码编辑器
+                </div>
+            </div>
+        </div>
+        <div class="ui container ten wide column grid">
+            <div class="ui fluid selection dropdown six wide column">
+                <input type="hidden" name="user">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Friend</div>
+                <div class="menu">
+                    <div class="item" data-value="jenny">
+                        <img class="ui mini avatar image" src="/img/head tiny/jenny.jpg">
+                        Jenny Hess
+                    </div>
+                </div>
+            </div>
+            <div class="ui four wide column forbid">
+                <button class="orange ui button">禁封用户</button>
+            </div>
+        </div>
+        <div class="ui container ten wide column grid">
+            <button class="ui red button eight wide column">退出直播</button>
+        </div>
     </div>
 </div>
+<link rel="stylesheet" type="text/css" href="/css/live.css">
 <link rel="stylesheet" type="text/css" href="/css/room.css">
 <script src="/js/room.js"></script>
 @stop
