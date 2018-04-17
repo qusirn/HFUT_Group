@@ -65,6 +65,7 @@ Route::group(['prefix' => 'swagger'], function () {
 Route::get('/host_board/{id}', 'RoomController@host_board');
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
+Route::get('/testSignal', 'TestController@test_signal');
 Route::post('/Postregister', 'AuthController@Postregister');
 Route::post('/Postlogin', 'AuthController@Postlogin');
 Route::post('/Postcaptcha', 'SmsController@sms_func');

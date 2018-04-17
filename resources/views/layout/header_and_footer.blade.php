@@ -31,6 +31,8 @@
                 @if ( Session::has('messages') && Session::get('messages')['user'] != -1)
                 <div class="ui pointing dropdown item">
                     <img class="ui avatar image" src="/img/head tiny/joe.jpg">
+                    <input type="hidden" id="user_id" value="{{Session::get('messages')['user']['user_id']}}">
+                    <input type="hidden" id="user_name" value="{{Session::get('messages')['user']['user_name']}}">
                     <span>{{Session::get('messages')['user']['user_name']}}</span>
                     <i class="dropdown icon"></i>
                     <div class="menu">

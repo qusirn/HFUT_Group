@@ -162,7 +162,7 @@ $(document).ready(function(e) {
 		console.log('field is unchecked');
 	});
 
-    $('.ui.dropdown').dropdown();
+    // $('.ui.dropdown').dropdown();
 
     $('#head_live_button').click(function() {
         if(!$("[name='check-1']").is(":checked")) {
