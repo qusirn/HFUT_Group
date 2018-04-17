@@ -28,7 +28,7 @@ class StudentController extends Controller
                 'student' => $student,
             ]);
         }else{
-            return view('joinus', ['messages' => Message::Message('', '', Message::none_user())]);
+            return redirect('joinus');
         }
     }
 
