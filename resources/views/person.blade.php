@@ -34,7 +34,7 @@
                 <a class="item" data-tab="email">修改邮箱 </a>
                 <div class="right menu">
                     <div class="item">
-                        <button class="ui right labeled icon button"><i class="right arrow icon"></i> 开启直播 </button>
+                        <button class="ui right labeled icon button" onclick="turn()"><i class="right arrow icon"></i> 开启直播 </button>
                     </div>
                 </div>
             </div>
@@ -219,7 +219,7 @@
     </div>
 </div>
 
-<div class="ui modal">
+<div id="change_info" class="ui change_info modal">
     <i class="close icon"></i>
     <div class="header">
         个人信息修改
@@ -268,6 +268,8 @@
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
+@include('layout.teacher_open')
 <script type="text/javascript" src="/js/openpopup.js"></script>
 <script type="text/javascript" src="/js/tab.js"></script>
+<script src="/js/teacheropen.js"></script>
 @stop

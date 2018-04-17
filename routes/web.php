@@ -47,16 +47,6 @@ Route::get('/classify/html_live', 'ClassifyController@html_live');
 Route::get('/classify/python_live', 'ClassifyController@python_live');
 Route::get('/classify/cpp_live', 'ClassifyController@cpp_live');
 
-Route::get('/teacheropen', function () {
-    return view('teacheropen', [
-      'name' => 'Victoria',
-      'user' => '-1',
-      'statue' => [
-          'value' => 'none'
-        ],
-    ]);
-});
-
 Route::group(['prefix' => 'swagger'], function () {
     Route::get('json', 'SwaggerController@getJSON');
     Route::get('my-data', 'SwaggerController@getMyData');

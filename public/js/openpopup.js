@@ -1,5 +1,5 @@
 function openpopup () {
-    $('.ui.modal')
+    $('.ui.change_info.modal')
         .modal('show')
 }
 $('.special.cards .image').dimmer({
