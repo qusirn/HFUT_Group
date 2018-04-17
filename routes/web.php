@@ -24,10 +24,13 @@ Route::get('/home', function () {
     ]);
 });
 Route::get('/room/{id}', 'RoomController@room');
+Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');
 
 Route::get('/person', 'StudentController@index');
 Route::get('/person/update', 'StudentController@update');
+Route::post('/student/email/update', 'StudentController@email_update');
+
 Route::get('/classify', function () {
     return view('classify',[
       'name' => -1,
@@ -39,12 +42,8 @@ Route::get('/classify', function () {
 });
 Route::get('/search', 'SearchController@search');
 Route::get('/classify', 'ClassifyController@index');
-Route::get('/classify/php_live', 'ClassifyController@php_live');
-Route::get('/classify/java_live', 'ClassifyController@java_live');
-Route::get('/classify/bigdate_live', 'ClassifyController@bigdate_live');
-Route::get('/classify/html_live', 'ClassifyController@html_live');
-Route::get('/classify/python_live', 'ClassifyController@python_live');
-Route::get('/classify/cpp_live', 'ClassifyController@cpp_live');
+Route::get('/classify/search', 'ClassifyController@search');
+
 
 Route::get('/teacheropen', function () {
     return view('teacheropen', [
@@ -56,7 +55,12 @@ Route::get('/teacheropen', function () {
     ]);
 });
 
+Route::group(['prefix' => 'swagger'], function () {
+    Route::get('json', 'SwaggerController@getJSON');
+    Route::get('my-data', 'SwaggerController@getMyData');
+});
 
+Route::get('/host_board/{id}', 'RoomController@host_board');
 Route::get('/logout', 'AuthController@logout');
 Route::get('/joinus', 'PageController@joinus');
 Route::post('/Postregister', 'AuthController@Postregister');

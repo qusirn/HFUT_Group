@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Live;
 use App\Model\Teacher;
+use App\Model\Video;
 
 class ClassifyController extends Controller
 {
@@ -13,60 +14,40 @@ class ClassifyController extends Controller
         $lives = \App\Model\Live::all()
                ->sortByDesc('l_looker_num')
                ->take(8);
-        return view('classify',['lives' => $lives]);
+        return view('classify', ['lives' => $lives]);
     }
-    //查询php类直播
-    public function php_live()
+
+    //查询直播/录播
+    public function search(Request $request)
     {
-        $lives = \App\Model\Live::where('l_classify',"PHP")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
-    }
-    //查询java类直播
-    public function java_live()
-    {
-        $lives = \App\Model\Live::where('l_classify',"Java")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
-    }
-    //查询大数据类直播
-    public function bigdate_live()
-    {
-        $lives = \App\Model\Live::where('l_classify',"BigData")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
-    }
-    //查询html类直播
-    public function html_live()
-    {
-        $lives = \App\Model\Live::where('l_classify',"HTML")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
-    }
-    //查询python类直播
-    public function python_live()
-    {
-        $lives = \App\Model\Live::where('l_classify',"Python")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
-    }
-    //查询c++类直播
-    public function cpp_live()
-    {
-        $lives = \App\Model\Live::where('l_classify',"C++")
-               ->orderBy('l_looker_num', 'desc')
-               ->take(8)
-               ->get();
-        return view('classify',['lives' => $lives]);
+        $formal = $request->formal;
+        $classify = $request->classify;
+
+        if($formal == "录播"){
+            if($classify == '全部'){
+                $videos = \App\Model\Video::all()
+                       ->sortByDesc('v_looker_num')
+                       ->take(8);
+            }else {
+                $videos = \App\Model\Video::where('v_classify', $classify)
+                       ->orderBy('v_looker_num', 'desc')
+                       ->take(8)
+                       ->get();
+            }
+            return view('video_list', ['videos' => $videos]);
+
+        }else{
+            if($classify == '全部'){
+                $lives = \App\Model\Live::all()
+                       ->sortByDesc('l_looker_num')
+                       ->take(8);
+            }else {
+                $lives = \App\Model\Live::where('l_classify', $classify)
+                       ->orderBy('l_looker_num', 'desc')
+                       ->take(8)
+                       ->get();
+            }
+            return view('classify_list', ['lives' => $lives]);
+        }
     }
 }
