@@ -7,7 +7,6 @@
 <script src="/js/script-host.js"></script>
 <script src="/js/live.js"></script>
 <script src="/js/lc_switch.js" type="text/javascript"></script>
-
 <div class="ui container large center aligned grid live_page">
     <div class="ui container grid center aligned">
         <div class="ui fourteen wide column room_message left aligned">
@@ -26,7 +25,6 @@
             <a class="ui violet label">Learning</a> &nbsp
             <a class="ui purple label">haooon</a> &nbsp
         </div>
-
         <h4 class="ui horizontal divider header">
             <i class="tag icon"></i>
             直播内容
@@ -44,7 +42,6 @@
                 </div>
             </div>
             <div class="ui tab board" data-tab="second">
-
             </div>
             <div class="ui tab" data-tab="third">
             </div>
@@ -67,8 +64,18 @@
                     <div class="field">
                         <textarea rows="2" id="msg"></textarea>
                     </div>
-                    <div class="ui blue labeled submit icon button" id="send">
-                        <i class="icon edit"></i> Add Reply
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <img id="emoji_button" src="/img/emoji.png">
+                            <div class="ui flowing popup top left transition hidden">
+                                @include('layout.emoji_list')
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui blue labeled submit icon button" id="send">
+                                <i class="icon edit"></i> Add Reply
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

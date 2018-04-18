@@ -63,4 +63,13 @@ session.onLoginSuccess = function(uid){
         })
     };
 };
+$('.emoji_item').on('click', function() {
+    console.log(this.firstChild.id);
+    $('#msg').val($('#msg').val() + $('#'+this.firstChild.id).html());
+    $('#emoji_button').popup('hide')
+})
+$('#emoji_button')
+  .popup({
+    on: 'click'
+  });
 // })
