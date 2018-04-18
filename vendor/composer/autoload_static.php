@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
+class ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -103,7 +103,6 @@ class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
         'C' => 
         array (
             'Cron\\' => 5,
-            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -282,14 +281,14 @@ class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
         ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -355,6 +354,7 @@ class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
         'App\\Http\\Controllers\\SmsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SmsController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\SwaggerController' => __DIR__ . '/../..' . '/app/Http/Controllers/SwaggerController.php',
+        'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -2144,6 +2144,7 @@ class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -4094,10 +4095,11 @@ class ComposerStaticInit137dcfbf331c18a7c621746329c8ee59
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit137dcfbf331c18a7c621746329c8ee59::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit137dcfbf331c18a7c621746329c8ee59::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit137dcfbf331c18a7c621746329c8ee59::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit137dcfbf331c18a7c621746329c8ee59::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$classMap;
 
         }, null, ClassLoader::class);
     }
