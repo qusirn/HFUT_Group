@@ -10,29 +10,32 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "eslint public/js --cache --ignore-pattern .gitignore"
   },
-
   "pre-commit": [
-      "lint"
-   ],
-
+    "lint"
+  ],
   "devDependencies": {
     "axios": "^0.17",
+    "babel-eslint": "^7.1.1",
     "bootstrap-sass": "^3.3.7",
     "cross-env": "^5.1",
-    "jquery": "^3.2",
-    "laravel-mix": "^1.0",
-    "lodash": "^4.17.4",
-    "vue": "^2.5.7",
-	"babel-eslint": "^7.1.1",
-	"eslint": "^3.19.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-html": "^3.0.0",
-    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.2.0"
+    "jasmine-core": "^3.1.0",
+    "jquery": "^3.2",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "laravel-mix": "^1.0",
+    "lodash": "^4.17.4",
+    "vue": "^2.5.7"
   },
   "dependencies": {
     "semantic-ui": "^2.3.1"
