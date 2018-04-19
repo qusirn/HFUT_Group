@@ -28,7 +28,7 @@ Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');
 
 Route::get('/person', 'StudentController@index');
-Route::get('/person/update', 'StudentController@update');
+Route::post('/person/update', 'StudentController@update')->name('s-info-update');
 Route::post('/student/email/update', 'StudentController@email_update');
 
 Route::get('/classify', function () {
