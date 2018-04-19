@@ -8,8 +8,12 @@
     <div class= "personalmain">
         <div class="personaltop">
             <div>
-                <img class="ui small left floated image" src="/img/userphoto.png">
-                <h2 class = "name">hooon</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
+                @if($student->s_header == '')
+                    <img class="ui small left floated image" src="/img/head tiny/joe.jpg">
+                @else
+                    <img src="{{ $student->s_header }}">
+                @endif
+                <h2 class = "name">{{ $student->s_username }}</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
             </div>
             <div class="label">
                 <a class="ui blue basic label">JAVA<i class="icon close"></i></a>
@@ -18,9 +22,9 @@
             </div>
             <div class="address">
                 <i id="icon" class="student icon"></i><p class="info">学生&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                <i id="icon" class="call square icon"></i><p class="info">&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    <i id="icon" class="mail outline icon"></i><p class="info">暂未绑定</p>
-                    <i id="icon" class="mail outline icon"></i><p class="info"></p>
+                <i id="icon" class="call square icon"></i><p class="info">{{ $student->s_tel }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                <i id="icon" class="mail outline icon"></i><p class="info">{{ $student->s_email }}</p>
+
             </div>
         </div>
 
@@ -226,34 +230,46 @@
     </div>
     <div class="image content">
         <div class="ui medium image">
-            <img src="/img/userphoto.png">
+            @if($student->s_header == '')
+                <img src="/img/head tiny/joe.jpg">
+            @else
+                <img src="{{ $student->s_header }}">
+            @endif
         </div>
         <div class="description">
-            <form class="ui form">
+            <form class="ui form" method="POST" action="{{ route('s-info-update') }}">
+                {!! csrf_field() !!}
                 <div class="inline fields">
                     <div class="field">
                         <label>昵称</label>
-                        <input type="text" name="" placeholder="昵称">
-                    </div>
-                </div>
-                <div class="inline fields">
-                    <div class="field">
-                        <label>学校</label>
-                        <input type="text" name="last-name" placeholder="学校">
-                    </div>
-                </div>
-                <div class="inline fields">
-                    <div class="field">
-                        <label>手机</label>
-                        <input type="text" name="" placeholder="手机">
+                        <input type="text" name="s_username" placeholder="昵称" value="{{ $student->s_username }}">
                     </div>
                 </div>
                 <div class="inline fields">
                     <div class="field">
                         <label>邮箱</label>
-                        <input type="text" name="last-name" placeholder="邮箱">
+                        <input type="text" name="s_email" placeholder="邮箱" value="{{ $student->s_email }}">
                     </div>
                 </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>学校</label>
+                        <input type="text" name="s_school" placeholder="学校" value="{{ $student->s_school }}">
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>专业</label>
+                        <input type="text" name="s_major" placeholder="学校" value="{{ $student->s_major }}">
+                    </div>
+                </div>
+                <div class="inline fields">
+                    <div class="field">
+                        <label>学号</label>
+                        <input type="text" name="s_code" placeholder="学校" value="{{ $student->s_code }}">
+                    </div>
+                </div>
+
                 <button class="ui button" type="submit">确认</button>
             </form>
         </div>
