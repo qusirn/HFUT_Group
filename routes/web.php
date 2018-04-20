@@ -57,3 +57,5 @@ Route::get('/testSignal', 'TestController@test_signal');
 Route::post('/Postregister', 'AuthController@Postregister');
 Route::post('/Postlogin', 'AuthController@Postlogin');
 Route::post('/Postcaptcha', 'SmsController@sms_func');
+Route::get('/testCode', 'TestController@testCode');
+Route::get('/codeReader', 'TestController@codeReader');
