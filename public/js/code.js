@@ -36,5 +36,23 @@ session.onLoginSuccess = function(uid){
                 'value': editor.getValue(),
             });
         });
+        editor.getSession().on('changeScrollTop', function(scroll) {
+            channel.messageChannelSend({
+                'func': 'scroll',
+                'top': editor.getSession().getScrollTop(),
+                'value': editor.getValue(),
+            });
+        });
+        editor.getSession().on('changeFold', function(fold) {
+            console.log(fold);
+            channel.messageChannelSend({
+                'func': 'fold',
+                'data': {
+                    'action': fold['action'],
+                    'start': fold['data']['start'],
+                    'end': fold['data']['end']
+                }
+            });
+        });
     };
 };
