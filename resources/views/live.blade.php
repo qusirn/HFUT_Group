@@ -38,21 +38,43 @@
             </div>
             <div class="ui tab active" data-tab="first">
                 <div id="video">
+                    <div id="ready_screen" class="ready_screen">
+                        <div class="ui active centered inline loader"></div>
+                        <div class="ui hidden divider"></div>
+                        <p>请做好准备……</p>
+                    </div>
                     <div id="agora_local"></div>
                 </div>
             </div>
             <div class="ui tab board" data-tab="second">
+                <div id="ready_screen" class="ready_screen">
+                    <div class="ui active centered inline loader"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>请做好准备……</p>
+                </div>
             </div>
             <div class="ui tab" data-tab="third">
+                <div id="ready_screen" class="ready_screen">
+                    <div class="ui active centered inline loader"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>请做好准备……</p>
+                </div>
             </div>
             <div class="ui tab" data-tab="fourth">
+                <div id="ready_screen" class="ready_screen">
+                    <div class="ui active centered inline loader"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>请做好准备……</p>
+                </div>
                 4
             </div>
         </div>
         <div class="ui five wide column segment left aligned">
+            <h3 class="ui dividing header" style="margin-top:-15px;padding-bottom:10px;">评论区</h3>
             <div class="reply_content">
+
                 <div class="ui comments" id="comments">
-                    <h3 class="ui dividing header">Comments</h3>
+
                     @for ($i = 0; $i < 10; $i++)
 
                     @endfor

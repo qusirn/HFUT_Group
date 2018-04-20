@@ -153,12 +153,14 @@ $(document).ready(function(e) {
 
 	// triggered each time a field is checked
 	$('body').delegate('.lcs_check', 'lcs-on', function() {
-		console.log('field is checked');
+        document.getElementById("ready_screen").style.display="none";
+        console.log('field is checked');
 	});
 
 
 	// triggered each time a is unchecked
 	$('body').delegate('.lcs_check', 'lcs-off', function() {
+        document.getElementById("ready_screen").style.display="";
 		console.log('field is unchecked');
 	});
 
