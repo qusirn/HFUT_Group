@@ -11,4 +11,14 @@ class TestController extends Controller {
     {
         return view('testSignal');
     }
+
+    public function testCode(Request $request)
+    {
+        return view('testCode');
+    }
+
+    public function codeReader(Request $request)
+    {
+        return view('codeReader');
+    }
 }
