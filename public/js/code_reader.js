@@ -2,7 +2,6 @@ var editor = ace.edit("editor");
 // editor.setTheme("ace/theme/monokai");
 editor.session.setMode("ace/mode/java");
 
-
 editor.setReadOnly(true);
 var student = [];
 var myDate = new Date();
@@ -25,6 +24,17 @@ session.onLoginSuccess = function(uid){
             }else if(msg['func'] == 'cursor') {
                 editor.moveCursorTo(msg['cursor']['row'], msg['cursor']['column'])
                 editor.gotoLine(msg['cursor']['row']);
+            }else if(msg['func'] == 'select') {
+                editor.moveCursorTo(msg['cursor_start']['row'], msg['cursor_start']['column'])
+                editor.selection.selectTo(msg['cursor_end']['row'], msg['cursor_end']['column']);
+            }else if(msg['func'] == 'scroll') {
+                editor.getSession().setScrollTop(msg['top'])
+            }else if(msg['func'] == 'fold') {
+                if(msg['data']['action'] == 'add'){
+                    editor.getSession().foldAll(msg['data']['start']['row'], msg['data']['end']['row']);
+                }else if(msg['data']['action'] == 'remove'){
+                    editor.getSession().unfold(msg['data']['start']['row'] + 1, true);
+                }
             }
         }
     };
