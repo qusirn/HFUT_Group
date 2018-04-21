@@ -6,10 +6,12 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 
 
-class RoomTest extends TestCase
+class SearchTest extends TestCase
 {
     /**
      * A basic test example.
@@ -20,7 +22,7 @@ class RoomTest extends TestCase
     {
         // $roomController = new RoomController();
 
-        $request= $this->request("Get",/"fclassify",["keyword"=>"java")):
+        $request= $this->call("GET","/classify",["keyword"=>"java"]);
         $this->assertEquals(200,$request ->status());
     }
 }
