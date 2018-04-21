@@ -6,6 +6,7 @@
 <script src="/js/AgoraSig-1.2.1.js"></script>
 <script src="/js/script-host.js"></script>
 <script src="/js/live.js"></script>
+<script src="/js/recording.js"></script>
 <script src="/js/lc_switch.js" type="text/javascript"></script>
 <div class="ui container large center aligned grid live_page">
     <div class="ui container grid center aligned">
@@ -108,7 +109,7 @@
             控制面板
         </h4>
 
-        <div class="ui container text five column grid">
+        <div class="ui container text six column grid">
             <div class="statistic column">
                 <div class="value">
                     <div id="head_live_button" class="slide_button">
@@ -147,6 +148,16 @@
                 </div>
                 <div class="label">
                     代码编辑器
+                </div>
+            </div>
+            <div class="statistic column">
+                <div class="value">
+                    <div id="is_recording_button" class="slide_button">
+                        <input type="checkbox" name="check-4" value="4" class="lcs_check" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="label">
+                    录播
                 </div>
             </div>
         </div>

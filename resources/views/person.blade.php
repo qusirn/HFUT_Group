@@ -11,7 +11,7 @@
                 @if($student->s_header == '')
                     <img class="ui small left floated image" src="/img/head tiny/joe.jpg">
                 @else
-                    <img src="{{ $student->s_header }}">
+                    <img class="ui small left floated image" src="{{ $student->s_header }}">
                 @endif
                 <h2 class = "name">{{ $student->s_username }}</h2>&nbsp;&nbsp;<a class="ui tag label" onclick="openpopup()">修改</a>
             </div>
@@ -84,11 +84,19 @@
                         <div class="content">
                             <div class="header">上传头像</div>
                             <div class="cardimage">
-                                <img src="/img/userphotomini.png"></img>
+                            @if($student->s_header == '')
+                                <img class="ui small left floated image" src="/img/head tiny/joe.jpg">
+                            </div>
+                            <div class="introduce">
+                                <div class="description">暂未上传头像 </div>
+                            </div>
+                            @else
+                                <img class="ui small left floated image" src="{{ $student->s_header }}">
                             </div>
                             <div class="introduce">
                                 <div class="description">已上传头像 </div>
                             </div>
+                            @endif
                         </div>
                         <div class="ui bottom attached button"><i class="add icon"></i> 更换头像 </div>
                     </div>
@@ -97,12 +105,24 @@
             <div class="ui bottom attached tab segment" data-tab="head">
                 <div class="inside">
                     <p>请选择一个新照片进行上传编辑头像保存后，你可以需要刷新一下本页面（按F5键），才能查看最新的头像效果。</p>
-                    <div class="info">
-                        <img class="ui medium circular image" src="/img/userphoto.png">
+                    <div id="user-header" class="info">
+                        @if($student->s_header == '')
+                            <img class="ui small left floated image" src="/img/head tiny/joe.jpg">
+                        @else
+                            <img class="ui small left floated image" src="{{ $student->s_header }}">
+                        @endif
                     </div>
-                    <div class="headbutton">
-                        <button class="fluid ui button">上传头像</button>
-                    </div>
+                    <form id="header-form" enctype="multipart/form-data" class="ui form" method="POST" action="{{ route('s-header-update') }}">
+                        {!! csrf_field() !!}
+                        <div class="inline fields">
+                            <div class="field">
+                                <label>头像文件</label>
+                                <input type="file" accept="image/*" name="header_img" onchange="preview(this)">
+                            </div>
+                        </div>
+
+                        <button class="fluid ui button" type="submit">上传头像</button>
+                    </form>
                 </div>
             </div>
             <div class="ui bottom attached tab segment" data-tab="name">
@@ -184,6 +204,10 @@
     </div>
 </div>
 <div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
+<div class="ui hidden divider"></div>
 <div class="containertTitle">
     <div class="ui horizontal divider">
         我的录播
@@ -260,16 +284,15 @@
                 <div class="inline fields">
                     <div class="field">
                         <label>专业</label>
-                        <input type="text" name="s_major" placeholder="学校" value="{{ $student->s_major }}">
+                        <input type="text" name="s_major" placeholder="专业" value="{{ $student->s_major }}">
                     </div>
                 </div>
                 <div class="inline fields">
                     <div class="field">
                         <label>学号</label>
-                        <input type="text" name="s_code" placeholder="学校" value="{{ $student->s_code }}">
+                        <input type="text" name="s_code" placeholder="学号" value="{{ $student->s_code }}">
                     </div>
                 </div>
-
                 <button class="ui button" type="submit">确认</button>
             </form>
         </div>

@@ -27,9 +27,13 @@ Route::get('/room/{id}', 'RoomController@room');
 Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');
 
-Route::get('/person', 'StudentController@index');
-Route::post('/person/update', 'StudentController@update')->name('s-info-update');
-Route::post('/student/email/update', 'StudentController@email_update');
+
+Route::get('/api/student/get_student', 'StudentController@get_student');
+Route::get('/person', 'StudentController@index')->name('person');
+
+Route::post('/person/info-update', 'StudentController@info_update')->name('s-info-update');
+Route::post('/person/header-update', 'StudentController@header_update')->name('s-header-update');
+Route::post('/person/email/update', 'StudentController@email_update');
 
 Route::get('/classify', function () {
     return view('classify',[

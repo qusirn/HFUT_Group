@@ -1,30 +1,14 @@
-if(!AgoraRTC.checkSystemRequirements()) {
-    alert("browser is no support webRTC");
-}
-/* select Log type */
-// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.NONE);
-// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.ERROR);
-// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.WARNING);
-// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);
-// AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG);
-/* simulated data to proof setLogLevel() */
-// AgoraRTC.Logger.error('this is error');
-// AgoraRTC.Logger.warning('this is warning');
-// AgoraRTC.Logger.info('this is info');
-// AgoraRTC.Logger.debug('this is debug');
-
 var client, localStream, camera, microphone;
-
 var audioSelect = null;
 var videoSelect = null;
-
-function join() {
+function recording() {
     var channel_key = null;
+    var channel = '1000';
     client = AgoraRTC.createClient();
     console.log(channel_key);
     client.init(String('b78a882b8e1c49aea1e7013947165e60'), function () {
         console.log("AgoraRTC client initialized");
-        client.join(null, '1000', null, function(uid) {
+        client.join(channel_key, channel, null, function(uid) {
             console.log("client" + uid + "joined channel");
             //create local stream
             camera = audioSelect;
@@ -138,60 +122,12 @@ function getDevices() {
         }
     });
 }
-
-//audioSelect.onchange = getDevices;
-//videoSelect.onchange = getDevices;
 getDevices();
 
-$(document).ready(function(e) {
-	$('input').lc_switch();
-	// triggered each time a field changes status
-	$('body').delegate('.lcs_check', 'lcs-statuschange', function() {
-		var status = ($(this).is(':checked')) ? 'checked' : 'unchecked';
-		console.log('field changed status: '+ status );
-	});
+$('#is_recording_button').click(function() {
+    if(!$("[name='check-4']").is(":checked")) {
+        recirding();
+    }else {
 
-	// triggered each time a field is checked
-	$('body').delegate('.lcs_check', 'lcs-on', function() {
-        document.getElementById("ready_screen").style.display="none";
-        console.log('field is checked');
-	});
-
-
-	// triggered each time a is unchecked
-	$('body').delegate('.lcs_check', 'lcs-off', function() {
-        document.getElementById("ready_screen").style.display="";
-		console.log('field is unchecked');
-	});
-
-    // $('.ui.dropdown').dropdown();
-
-    $('#head_live_button').click(function() {
-        if(!$("[name='check-1']").is(":checked")) {
-            $("[data-tab='first']").click();
-            join();
-        }else {
-            unpublish();
-            localStream.close();
-            localStream.stop();
-            leave();
-        }
-    });
-
-    $('#ppt_live_button').click(function(){
-        if(!$("[name='check-3']").is(":checked")) {
-            $("[data-tab='third']").click();
-        }else {
-
-        }
-    });
-
-
-    $('#code_live_button').click(function() {
-        if(!$("[name='check-4']").is(":checked")) {
-            $("[data-tab='fourth']").click();
-        }else {
-
-        }
-    });
+    }
 });

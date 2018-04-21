@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< Updated upstream
 class ComposerStaticInit1e2641e6950173318dbc327201b2f170
+=======
+class ComposerStaticInit17f9f123b146f9e73660b286dd500459
+>>>>>>> Stashed changes
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -4109,11 +4113,19 @@ class ComposerStaticInit1e2641e6950173318dbc327201b2f170
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< Updated upstream
             $loader->prefixLengthsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$classMap;
+=======
+            $loader->prefixLengthsPsr4 = ComposerStaticInit17f9f123b146f9e73660b286dd500459::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit17f9f123b146f9e73660b286dd500459::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit17f9f123b146f9e73660b286dd500459::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit17f9f123b146f9e73660b286dd500459::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit17f9f123b146f9e73660b286dd500459::$classMap;
+>>>>>>> Stashed changes
 
         }, null, ClassLoader::class);
     }
