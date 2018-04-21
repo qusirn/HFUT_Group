@@ -303,6 +303,21 @@
         </div>
     </div>
 </div>
+@if (Session::has('is_update') && Session::get('is_update') == True)
+    <div class="ui mini basic modal">
+        <div class="ui icon ">
+            <i class="huge checkmark icon"></i>
+            <h3>您的用户已修改成功<h3>
+        </div>
+        <div class="actions">
+            <div class="ui green ok inverted button">
+                确定
+            </div>
+        </div>
+    </div>
+@endif
+@if (Session::put('is_update', False))
+@endif
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
 <div class="ui hidden divider"></div>
@@ -310,5 +325,6 @@
 @include('layout.teacher_open')
 <script type="text/javascript" src="/js/openpopup.js"></script>
 <script type="text/javascript" src="/js/tab.js"></script>
+<script type="text/javascript" src="/js/person.js"></script>
 <script src="/js/teacheropen.js"></script>
 @stop
