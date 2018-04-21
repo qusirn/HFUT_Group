@@ -1,4 +1,4 @@
-$('#menu .item').tab()
+$('.ui.basic.modal').modal('show');
 function preview(file) {
     if (file.files && file.files[0]) {
         var reader = new FileReader();
