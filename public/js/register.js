@@ -40,6 +40,15 @@ $(document)
                             }
                         ]
                     },
+                    match: {
+                        identifier: 'verify',
+                        rules: [
+                            {
+                                type: 'match[password]',
+                                prompt: '密码输入不一致'
+                            }
+                        ]
+                    },
                     captcha: {
                         identifier: 'captcha',
                         rules: [
