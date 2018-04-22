@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="two fields">
+                            <div class="three fields">
                                 <div class="field">
                                     <label>姓名</label>
                                     <input placeholder="请输入姓名" name="name" type="text">
@@ -38,6 +38,10 @@
                                 <div class="field">
                                     <label>Password</label>
                                     <input type="password" name="password">
+                                </div>
+                                <div class="field">
+                                    <label>再次输入密码</label>
+                                    <input type="password" name="verify">
                                 </div>
                             </div>
                             {!! csrf_field() !!}
