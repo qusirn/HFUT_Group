@@ -20,6 +20,7 @@ Route::get('/', function () {
         ],
     ]);
 });
+Route::get('/', 'HomeController@search');
 Route::get('/room/{id}', 'RoomController@room');
 Route::get('/live/{id}', 'RoomController@live');
 Route::get('/video', 'VideoController@index');

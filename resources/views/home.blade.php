@@ -35,7 +35,7 @@
 </div>
 <div class="containert">
     <div class="ui grid container">
-        @for ($i = 0; $i < 8; $i++)
+        @foreach ($lives as $live)
         <div class="four wide column">
             <div class="ui special cards">
                 <div class="card">
@@ -43,28 +43,28 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                    <div class="ui inverted button">Add Friend</div>
+                                    <div class="ui inverted button">Join</div>
                                 </div>
                             </div>
                         </div>
-                        <img src="/img/card.jpg">
+                        <img src="{{ $live->l_cover }}">
                     </div>
                     <div class="content">
-                        <a class="header">Team Fu</a>
+                        <a class="header">{{ $live->l_headling }}</a>
                         <div class="meta">
-                            <span class="date">Create in Sep 2014</span>
+                            <span class="date"> {{ $live->l_description }}</span>
                         </div>
                     </div>
                     <div class="extra content">
                         <a>
                             <i class="users icon"></i>
-                            2 Members
+                            {{ $live->l_looker_num }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
 </div>
 <div class="ui hidden divider"></div>
@@ -81,7 +81,7 @@
 </div>
 <div class="containert">
     <div class="ui grid container">
-        @for ($i = 0; $i < 8; $i++)
+        @foreach ($videos as $video)
         <div class="four wide column">
             <div class="ui special cards">
                 <div class="card">
@@ -89,28 +89,28 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                    <div class="ui inverted button">Add Friend</div>
+                                    <div class="ui inverted button">Join</div>
                                 </div>
                             </div>
                         </div>
-                        <img src="/img/card.jpg">
+                        <img src="{{ $video->v_cover }}">
                     </div>
                     <div class="content">
-                        <a class="header">Team Fu</a>
+                        <a class="header">{{ $video->v_headling }}</a>
                         <div class="meta">
-                            <span class="date">Create in Sep 2014</span>
+                            <span class="date">{{ $video->v_description }}</span>
                         </div>
                     </div>
                     <div class="extra content">
                         <a>
                             <i class="users icon"></i>
-                            2 Members
+                            {{ $video->v_looker_num }}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
 </div>
 <script src="/js/vue.min.js"></script>
