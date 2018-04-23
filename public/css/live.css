@@ -118,3 +118,8 @@
     border-radius: 15px;
     margin-left: 15%;
 }
+#editor {
+    width: 610px;
+    height: 500px;
+    border: solid 1px;
+}

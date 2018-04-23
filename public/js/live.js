@@ -44,13 +44,13 @@ function join() {
 
             localStream.init(function() {
                 console.log("getUserMedia successfully");
-                localStream.play('agora_local');
                 client.publish(localStream, function (err) {
                     console.log("Publish local stream error: " + err);
                 });
                 client.on('stream-published', function (evt) {
-                    console.log("Publish local stream successfully");
+                    console.log("Publish local sasdasdasdasdfadtyjasdfruaystdjtajsgtdjagstdgtream successfully");
                 });
+                localStream.play('agora_local');
             }, function (err) {
                 console.log("getUserMedia failed", err);
             });
@@ -61,41 +61,6 @@ function join() {
         });
     }, function (err) {
         console.log("AgoraRTC client init failed", err);
-    });
-    channelKey = "";
-    client.on('stream-added', function (evt) {
-        alert('stream-added');
-        var stream = evt.stream;
-        console.log("New stream added: " + stream.getId());
-        console.log("Subscribe ", stream);
-        client.subscribe(stream, function (err) {
-            console.log("Subscribe stream failed", err);
-        });
-    });
-
-    client.on('stream-subscribed', function (evt) {
-        var stream = evt.stream;
-        console.log("Subscribe remote stream successfully: " + stream.getId());
-        if ($('div#video #agora_remote'+stream.getId()).length === 0) {
-            $('div#video').append('<div id="agora_remote'+stream.getId()+'" style="float:left; width:810px;height:607px;display:inline-block;"></div>');
-        }
-        stream.play('agora_remote' + stream.getId());
-    });
-
-    client.on('stream-removed', function (evt) {
-        var stream = evt.stream;
-        stream.stop();
-        $('#agora_remote' + stream.getId()).remove();
-        console.log("Remote stream is removed " + stream.getId());
-    });
-
-    client.on('peer-leave', function (evt) {
-        var stream = evt.stream;
-        if (stream) {
-            stream.stop();
-            $('#agora_remote' + stream.getId()).remove();
-            console.log(evt.uid + " leaved from this channel");
-        }
     });
 }
 
@@ -108,11 +73,7 @@ function leave() {
 }
 
 function publish() {
-    document.getElementById("publish").disabled = true;
-    document.getElementById("unpublish").disabled = false;
-    client.publish(localStream, function (err) {
-        console.log("Publish local stream error: " + err);
-    });
+
 }
 
 function unpublish() {
@@ -189,9 +150,12 @@ $(document).ready(function(e) {
 
     $('#code_live_button').click(function() {
         if(!$("[name='check-4']").is(":checked")) {
-            $("[data-tab='fourth']").click();
+            $("[data-tab='fourh']").click();
+            code_on();
+            con.turn_on_code();
         }else {
-
+            code_off();
+            con.turn_off_code();
         }
     });
 });

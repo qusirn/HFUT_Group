@@ -4,7 +4,10 @@
 <script src="/js/AgoraRTCSDK-2.1.1.js"></script>
 <script src="/js/AgoraWBSDK-1.0.0.js"></script>
 <script src="/js/AgoraSig-1.2.1.js"></script>
+<script src="/js/controller_signal.js"></script>
 <script src="/js/script-host.js"></script>
+<script src="/js/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/code.js" type="text/javascript" charset="utf-8"></script>
 <script src="/js/live.js"></script>
 <script src="/js/lc_switch.js" type="text/javascript"></script>
 <div class="ui container large center aligned grid live_page">
@@ -47,11 +50,8 @@
                 </div>
             </div>
             <div class="ui tab board" data-tab="second">
-                <div id="ready_screen" class="ready_screen">
-                    <div class="ui active centered inline loader"></div>
-                    <div class="ui hidden divider"></div>
-                    <p>请做好准备……</p>
-                </div>
+                <div id="wbHost"></div>
+                <div id="videoContainer"></div>
             </div>
             <div class="ui tab" data-tab="third">
                 <div id="ready_screen" class="ready_screen">
@@ -60,13 +60,7 @@
                     <p>请做好准备……</p>
                 </div>
             </div>
-            <div class="ui tab" data-tab="fourth">
-                <div id="ready_screen" class="ready_screen">
-                    <div class="ui active centered inline loader"></div>
-                    <div class="ui hidden divider"></div>
-                    <p>请做好准备……</p>
-                </div>
-                4
+            <div class="ui tab" data-tab="fourth" id="code">
             </div>
         </div>
         <div class="ui five wide column segment left aligned">
