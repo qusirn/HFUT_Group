@@ -18,7 +18,7 @@ chat_session.onLoginSuccess = function(uid){
             var message =
             '<div class="comment">' +
                 '<a class="avatar">' +
-                    '<img src="/img/head tiny/matt.jpg">' +
+                    '<img src="/storage/header_img/'+ msg['user_id'] + '.png">' +
                 '</a>' +
                 '<div class="content">' +
                     '<a class="author">' + msg['user_name'] + '</a>' +
@@ -57,6 +57,8 @@ chat_session.onLoginSuccess = function(uid){
             chat_channel.messageChannelSend(
                 {
                     'user_name': $('#user_name').val(),
+                    'classify': 'S',
+                    'user_id': $('#user_id').val(),
                     'msg': $('#msg').val()
                 }
             );
