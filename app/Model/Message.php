@@ -12,10 +12,11 @@ class Message{
         ];
         return $messages;
     }
-    public static function user($user_id, $user_name){
+    public static function user($user){
         $user = [
-            'user_id' => $user_id,
-            'user_name' => $user_name,
+            'user_id' => $user->s_id,
+            'user_name' => $user->s_username,
+            'user_header' => $user->s_header,
         ];
         return $user;
     }

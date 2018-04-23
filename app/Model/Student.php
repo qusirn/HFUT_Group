@@ -23,7 +23,7 @@ class Student extends Model
         $user->s_email = $s_tel;
         $user->s_passwd = hash('sha1', $s_passwd);
         $user->save();
-        return Message::message('success', '欢迎 '.$user->s_username, Message::user($user->s_id, $user->s_username));
+        return Message::message('success', '欢迎 '.$user->s_username, Message::user($user));
     }
 
     public function login($tel, $password){
@@ -32,7 +32,7 @@ class Student extends Model
             return Message::Message('error', '学生不存在', Message::none_user());
         }
         if(hash('sha1', $password) == $user->s_passwd){
-            return Message::Message('success', '欢迎 '.$user->s_username, Message::user($user->s_id, $user->s_username));
+            return Message::Message('success', '欢迎 '.$user->s_username, Message::user($user));
         }else{
             return Message::Message('error', '错误，密码不正确！', Message::none_user());
         }

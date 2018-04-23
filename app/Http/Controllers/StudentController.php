@@ -79,6 +79,8 @@ class StudentController extends Controller
             $student->save();
         }
         $request->session()->put('is_update', $is_update);
+        $request->session()->put('messages', Message::message('success', '修改头像成功', Message::user($student)));
+
         return redirect()->route('person');
     }
 

@@ -30,7 +30,11 @@
                 </div>
                 @if ( Session::has('messages') && Session::get('messages')['user'] != -1)
                 <div class="ui pointing dropdown item">
-                    <img class="ui avatar image" src="/img/head tiny/joe.jpg">
+                    @if(Session::get('messages')['user']['user_header'] == '')
+                        <img class="ui avatar image" src="/img/head tiny/joe.jpg">
+                    @else
+                        <img class="ui avatar image" src="/storage/header_img/{{Session::get('messages')['user']['user_id']}}.png">
+                    @endif
                     <input type="hidden" id="user_id" value="{{Session::get('messages')['user']['user_id']}}">
                     <input type="hidden" id="user_name" value="{{Session::get('messages')['user']['user_name']}}">
                     <span>{{Session::get('messages')['user']['user_name']}}</span>
