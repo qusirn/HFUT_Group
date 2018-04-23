@@ -106,10 +106,10 @@
         </div>
         @elseif( Session::get('messages')['statue']['value'] == 'success' )
         <div class="ui container fixed bottom sticky five column grid">
-            <div class="ui tiny success message four wide column" style="margin: 0 0 25px 10px;">
-                <i class="close icon"></i>
-                <div class="header">欢迎：D</div>
-                <p>{{Session::get('messages')['statue']['message']}} </p>
+             <div class="ui tiny success message four wide column" style="width:100px;margin: 0 0 25px 10px;">
+                 <i class="close icon"></i>
+                 <div class="header">欢迎：D</div>
+                 <p>{{Session::get('messages')['statue']['message']}}</p>
             </div>
         </div>
         @endif
