@@ -114,14 +114,20 @@ $(document).ready(function(e) {
 
 	// triggered each time a field is checked
 	$('body').delegate('.lcs_check', 'lcs-on', function() {
-        document.getElementById("ready_screen").style.display="none";
+        // document.getElementById("ready_screen1").style.display="none";
+        // document.getElementById("ready_screen2").style.display="none";
+        // document.getElementById("ready_screen3").style.display="none";
+        // document.getElementById("ready_screen4").style.display="none";
         console.log('field is checked');
 	});
 
 
 	// triggered each time a is unchecked
 	$('body').delegate('.lcs_check', 'lcs-off', function() {
-        document.getElementById("ready_screen").style.display="";
+        // document.getElementById("ready_screen1").style.display="";
+        // document.getElementById("ready_screen2").style.display="";
+        // document.getElementById("ready_screen3").style.display="";
+        // document.getElementById("ready_screen4").style.display="";
 		console.log('field is unchecked');
 	});
 
@@ -130,8 +136,10 @@ $(document).ready(function(e) {
     $('#head_live_button').click(function() {
         if(!$("[name='check-1']").is(":checked")) {
             $("[data-tab='first']").click();
+            document.getElementById("ready_screen1").style.display="none";
             join();
         }else {
+            document.getElementById("ready_screen1").style.display="";
             unpublish();
             localStream.close();
             localStream.stop();
@@ -139,21 +147,32 @@ $(document).ready(function(e) {
         }
     });
 
+    $('#board_live_button').click(function(){
+        if(!$("[name='check-2']").is(":checked")) {
+            $("[data-tab='second']").click();
+            document.getElementById("ready_screen2").style.display="none";
+        }else {
+            document.getElementById("ready_screen2").style.display="";
+        }
+    });
+
     $('#ppt_live_button').click(function(){
         if(!$("[name='check-3']").is(":checked")) {
             $("[data-tab='third']").click();
+            document.getElementById("ready_screen3").style.display="none";
         }else {
-
+            document.getElementById("ready_screen3").style.display="";
         }
     });
 
 
     $('#code_live_button').click(function() {
         if(!$("[name='check-4']").is(":checked")) {
-            $("[data-tab='fourh']").click();
+            document.getElementById("ready_screen4").style.display="none";
             code_on();
             con.turn_on_code();
         }else {
+            document.getElementById("ready_screen4").style.display="";
             code_off();
             con.turn_off_code();
         }

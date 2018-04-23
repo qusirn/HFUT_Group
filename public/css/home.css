@@ -1,5 +1,5 @@
 .containert {
-    width:1202px;
+    width: 75%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -8,7 +8,7 @@
     align-items: flex-start;
 }
 .containertTitle {
-    width: 1202px;
+    width: 75%;
     height: 90px;
     margin: auto;
 }
@@ -26,7 +26,7 @@ body { }
         list-style: none;
     }
     .carousel {
-        width: 1202px;
+        width: 75%;
         height: 400px;
         overflow: hidden;
         margin: 50px auto;

@@ -49,7 +49,8 @@ chat_session.onLoginSuccess = function(uid){
         $('#get_users').on('click', user_controller.get_users);
         $('#send').on('click', function() {
             if($('#msg').val() == ''){
-                alert('无内容')
+                // alert('无内容');
+                document.getElementById("msg").style.borderColor="red";
                 return
             }
             //发送频道消息
@@ -67,6 +68,10 @@ $('.emoji_item').on('click', function() {
     console.log(this.firstChild.id);
     $('#msg').val($('#msg').val() + $('#'+this.firstChild.id).html());
     $('#emoji_button').popup('hide')
+})
+$('#msg').on('click', function() {
+    console.log('123');
+    document.getElementById("msg").style.borderColor="rgba(34,36,38,.15)";
 })
 $('#emoji_button')
   .popup({

@@ -42,7 +42,7 @@
             </div>
             <div class="ui tab active" data-tab="first">
                 <div id="video">
-                    <div id="ready_screen" class="ready_screen">
+                    <div id="ready_screen1" class="ready_screen">
                         <div class="ui active centered inline loader"></div>
                         <div class="ui hidden divider"></div>
                         <p>请做好准备……</p>
@@ -53,15 +53,25 @@
             <div class="ui tab board" data-tab="second">
                 <div id="wbHost"></div>
                 <div id="videoContainer"></div>
+                <div id="ready_screen2" class="ready_screen">
+                    <div class="ui active centered inline loader"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>请做好准备……</p>
+                </div>
             </div>
             <div class="ui tab" data-tab="third">
-                <div id="ready_screen" class="ready_screen">
+                <div id="ready_screen3" class="ready_screen">
                     <div class="ui active centered inline loader"></div>
                     <div class="ui hidden divider"></div>
                     <p>请做好准备……</p>
                 </div>
             </div>
             <div class="ui tab" data-tab="fourth" id="code">
+                <div id="ready_screen4" class="ready_screen">
+                    <div class="ui active centered inline loader"></div>
+                    <div class="ui hidden divider"></div>
+                    <p>请做好准备……</p>
+                </div>
             </div>
         </div>
         <div class="ui five wide column segment left aligned">
