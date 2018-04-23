@@ -1,19 +1,19 @@
 //teacher chat function
 
 var student = [];
-var myDate = new Date();
 var user_controller = new Object();
 signal = Signal('4916a40cf5bc4dcd9922b50f928a2cf0');
 // $('#test').on('click', function() {
 console.log($('#user_id').val());
-var session = signal.login($('#user_id').val(), '_no_need_token');
-session.onLoginSuccess = function(uid){
+var chat_session = signal.login($('#user_id').val(), '_no_need_token');
+chat_session.onLoginSuccess = function(uid){
     //加入频道，设置加入频道成功和失败回调
     console.log(uid);
-    var channel = session.channelJoin('123123test');
-    channel.onChannelJoined = function(){
-        channel.onMessageChannelReceive = function(account, uid, msg) {
+    var chat_channel = chat_session.channelJoin('123123test');
+    chat_channel.onChannelJoined = function(){
+        chat_channel.onMessageChannelReceive = function(account, uid, msg) {
             //接收频道消息回调设置
+            var myDate = new Date();
             console.log(account + ' ' + uid + ' ' + msg['msg']);
             var message =
             '<div class="comment">' +
@@ -34,7 +34,7 @@ session.onLoginSuccess = function(uid){
              $(".reply_content").scrollTop($(".reply_content")[0].scrollHeight);
         }
         user_controller.get_users = function() {
-            session.invoke(
+            chat_session.invoke(
                 'io.agora.signal.channel_query_userlist',
                 {'name':'123123test'},
                 function(err, val) {
@@ -53,7 +53,7 @@ session.onLoginSuccess = function(uid){
                 return
             }
             //发送频道消息
-            channel.messageChannelSend(
+            chat_channel.messageChannelSend(
                 {
                     'user_name': $('#user_name').val(),
                     'msg': $('#msg').val()

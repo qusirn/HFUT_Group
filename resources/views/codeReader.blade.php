@@ -10,7 +10,6 @@
     <div class="code">
         <div id="editor"></div>
     </div>
-    <script src="/js/src/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="/js/code_reader.js" type="text/javascript" charset="utf-8"></script>
+
     </body>
 </html>

@@ -46,7 +46,9 @@ Route::get('/classify', function () {
 });
 Route::get('/search', 'SearchController@search');
 Route::get('/classify', 'ClassifyController@index');
+Route::get('/classifyJson', 'ClassifyController@index_json');
 Route::get('/classify/search', 'ClassifyController@search');
+Route::get('/classify/searchJson', 'ClassifyController@search_json');
 
 
 Route::group(['prefix' => 'swagger'], function () {
