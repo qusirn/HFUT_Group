@@ -6,16 +6,16 @@
                 <div class="ui dimmer">
                     <div class="content">
                         <div class="center">
-                            <a href="/live/123"><div class="ui inverted button">Add Friend</div></a>
+                            <a href="/live/123"><div class="ui inverted button">Join</div></a>
                         </div>
                     </div>
                 </div>
-                <img src={{ $video->v_cover}}>
+                <img src="{{ $video->v_cover}}">
             </div>
             <div class="content">
                 <a class="header">{{ $video->v_headline }}</a>
                 <div class="meta">
-                    <span class="date">Create in Sep 2014</span>
+                    <span class="date">{{ $video->v_description }}</span>
                 </div>
             </div>
             <div class="extra content">

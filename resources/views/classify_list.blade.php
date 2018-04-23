@@ -6,16 +6,16 @@
                 <div class="ui dimmer">
                     <div class="content">
                         <div class="center">
-                            <a href="/live/123"><div class="ui inverted button">Add Friend</div></a>
+                            <a href="/live/123"><div class="ui inverted button">Join</div></a>
                         </div>
                     </div>
                 </div>
-                <img src={{ $live->l_cover}}>
+                <img src="{{$live->l_cover}}">
             </div>
             <div class="content">
                 <a class="header">{{ $live->l_headling }}</a>
                 <div class="meta">
-                    <span class="date">Create in Sep 2014</span>
+                    <span class="date">{{ $live->l_description }}</span>
                 </div>
             </div>
             <div class="extra content">
