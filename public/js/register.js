@@ -97,8 +97,15 @@ $(document)
         $('.changepage').on('click', function (event) {
             $('.shape').shape('flip over')
         })
-
+        var countdown = 60
+        var timer = null
         $('.captcha_button').on('click', function (event) {
+            var obj = $('#btn')
+            if ($('#tel_num').val() == '') {
+                alert('请先输入手机号')
+            } else {
+                settime(obj)
+            }
             var user = {
                 'tel': $('#tel_num').val()
             }
@@ -112,4 +119,20 @@ $(document)
                 data: '{"tel":' + $('#tel_num').val() + '}'
             })
         })
+        function settime (obj) {
+            clearInterval(timer)
+            if (countdown == 0) {
+                obj.attr('disabled', false)
+                obj.html('获取')
+                countdown = 60
+                return
+            } else {
+                obj.attr('disabled', true)
+                obj.html('重新发送(' + countdown + ')')
+                countdown--
+            }
+            timer = setTimeout(function () {
+                settime(obj)
+            }, 1000)
+        }
     })
