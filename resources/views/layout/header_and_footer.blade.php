@@ -100,7 +100,7 @@
                 <a class="item" href="#">Privacy Policy</a>
             </div>
         </div>
-        @if( Session::get('messages')['statue']['value'] == 'error' )
+        @if( Session::get('messages')['statue']['value'] == 'error1' )
         <div class="ui container fixed bottom sticky five column grid">
             <div class="ui tiny error message four wide column" style="margin: 0 0 25px 10px;">
                 <i class="close icon"></i>
@@ -108,7 +108,7 @@
                 <p>{{Session::get('messages')['statue']['message']}}</p>
             </div>
         </div>
-        @elseif( Session::get('messages')['statue']['value'] == 'success' )
+        @elseif( Session::get('messages')['statue']['value'] == 'success1' )
         <div class="ui container fixed bottom sticky five column grid">
              <div class="ui tiny success message four wide column" style="width:100px;margin: 0 0 25px 10px;">
                  <i class="close icon"></i>

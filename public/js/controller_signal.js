@@ -28,24 +28,16 @@ con_session.onLoginSuccess = function(uid){
             );
         };
         con.tab1 = function() {
-            con_channel.tab1(
-                'tab1'
-            );
+            con_channel.messageChannelSend('tab1');
         };
         con.tab2 = function() {
-            con_channel.tab2(
-                'tab2'
-            );
+            con_channel.messageChannelSend('tab2');
         };
         con.tab3 = function() {
-            con_channel.tab3(
-                'tab3'
-            );
+            con_channel.messageChannelSend('tab3');
         };
         con.tab4 = function() {
-            con_channel.tab4(
-                'tab4'
-            );
+            con_channel.messageChannelSend('tab4');
         };
     };
 };

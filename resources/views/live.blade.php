@@ -206,4 +206,5 @@
 <link rel="stylesheet" type="text/css" href="/css/room.css">
 <script src="/js/room.js"></script>
 <script src="/js/chat.js"></script>
+<script src="/js/exchange_tab.js"></script>
 @stop
