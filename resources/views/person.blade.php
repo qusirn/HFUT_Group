@@ -24,7 +24,6 @@
                 <i id="icon" class="student icon"></i><p class="info">学生&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <i id="icon" class="call square icon"></i><p class="info">{{ $student->s_tel }}&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <i id="icon" class="mail outline icon"></i><p class="info">{{ $student->s_email }}</p>
-
             </div>
         </div>
 
@@ -117,7 +116,10 @@
                         <div class="inline fields">
                             <div class="field">
                                 <label>头像文件</label>
-                                <input type="file" accept="image/*" name="header_img" onchange="preview(this)">
+                                <button class="ui button upload">
+                                    选择文件
+                                    <input type="file" accept="image/*" name="header_img" onchange="preview(this)">
+                                </button>
                             </div>
                         </div>
 

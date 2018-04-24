@@ -1,5 +1,6 @@
 $('.ui.basic.modal').modal('show');
 function preview(file) {
+    console.log("123");
     if (file.files && file.files[0]) {
         var reader = new FileReader();
         reader.onload = function(evt) {
