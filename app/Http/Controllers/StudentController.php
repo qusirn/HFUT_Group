@@ -60,7 +60,7 @@ class StudentController extends Controller
         $student->save();
         $is_update = True;
         $request->session()->put('is_update', $is_update);
-        $request->session()->put('messages', Message::message('success', '欢迎 '.$student->s_username, Message::user($student->s_id, $student->s_username)));
+        $request->session()->put('messages', Message::message('success', '欢迎 '.$student->s_username, Message::user($student)));
         //return($student->toArray());
         return redirect()->route('person');
     }

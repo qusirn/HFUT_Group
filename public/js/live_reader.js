@@ -11,6 +11,7 @@ function init() {
                 });
                 client.on('stream-subscribed', function (evt) {
                     var stream = evt.stream;
+                    console.log('123123');
                     console.log("Subscribe remote stream successfully: " + stream.getId());
                     stream.play('agora_local');
                 });

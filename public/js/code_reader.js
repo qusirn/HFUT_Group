@@ -5,8 +5,6 @@ function code_on() {
         '<div id="editor"></div>'
     );
     $('#code').append(code_area);
-
-
     var editor = ace.edit("editor");
     // editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/java");
@@ -21,9 +19,8 @@ function code_on() {
         var code_channel = code_session.channelJoin('123123testCode');
         code_channel.onChannelJoined = function(){
             code_channel.onMessageChannelReceive = function(account, uid, msg) {
-                console.log('123123');
+                // console.log(msg);
                 if(msg['func'] == 'change'){
-                    console.log('12312ssss3');
                     editor.setValue(msg['value']);
                     editor.gotoLine(msg['cursor']['row']);
                     editor.moveCursorTo(msg['cursor']['row'], msg['cursor']['column'])
@@ -39,7 +36,8 @@ function code_on() {
                     if(msg['data']['action'] == 'add'){
                         editor.getSession().foldAll(msg['data']['start']['row'], msg['data']['end']['row']);
                     }else if(msg['data']['action'] == 'remove'){
-                        editor.getSession().unfold(msg['data']['start']['row'], true);
+                        console.log(msg['data']['start']['row']);
+                        editor.getSession().unfold(msg['data']['start']['row'] + 1, true);
                     }
                 }
             }
