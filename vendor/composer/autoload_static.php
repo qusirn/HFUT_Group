@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< Updated upstream
-class ComposerStaticInit1e2641e6950173318dbc327201b2f170
-=======
-class ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca
->>>>>>> Stashed changes
+class ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -359,6 +355,7 @@ class ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca
         'App\\Http\\Controllers\\SmsController' => __DIR__ . '/../..' . '/app/Http/Controllers/SmsController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\SwaggerController' => __DIR__ . '/../..' . '/app/Http/Controllers/SwaggerController.php',
+        'App\\Http\\Controllers\\TeacherOpenController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherOpenController.php',
         'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Controllers\\VideoController' => __DIR__ . '/../..' . '/app/Http/Controllers/VideoController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -4116,19 +4113,11 @@ class ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< Updated upstream
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1e2641e6950173318dbc327201b2f170::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit9cafd1e02796d0e3e4b3ad4a68499fca::$classMap;
->>>>>>> Stashed changes
+            $loader->prefixLengthsPsr4 = ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit726c62ac99eb6e5cb5897392eabf3613::$classMap;
 
         }, null, ClassLoader::class);
     }
