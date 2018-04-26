@@ -63,3 +63,4 @@ Route::post('/Postlogin', 'AuthController@Postlogin');
 Route::post('/Postcaptcha', 'SmsController@sms_func');
 Route::get('/testCode', 'TestController@testCode');
 Route::get('/codeReader', 'TestController@codeReader');
+Route::post('/Postlive', 'TeacherOpenController@store');
