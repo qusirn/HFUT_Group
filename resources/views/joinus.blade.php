@@ -26,7 +26,7 @@
                                     </div>
                                     <div class="field">
                                         <label>获取验证码</label>
-                                        <div class="ui gray button captcha_button" id="btn">获取</div>
+                                        <button type="button" class="ui gray button captcha_button" id="btn">获取</button>
                                     </div>
                                 </div>
                             </div>
