@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Model\Student;
+use App\Model\Live;
 use App\Model\Message;
 use Illuminate\Http\Request;
 
@@ -23,14 +24,22 @@ class RoomController extends Controller {
       *  @SWG\Response(response="default", description="操作成功")
       *  )
       */
-    public function room(Request $request)
+    public function room(Request $request,$l_code)
     {
+        // print($l_code);
         // $request->session()->forget('messages');
+        $live = \App\Model\Live::where('l_code', $l_code)->first();
         if($request->session()->has('messages')){
             $messages = $request->session()->get('messages');
-            return view('room', $messages);
+            return view('room', [
+                'message' => $messages,
+                'live' => $live
+            ]);
         }else{
-            return view('room', ['messages' => Message::Message('error', 'unlogin', Message::none_user())]);
+            return view('room', [
+                'messages' => Message::Message('error', 'unlogin', Message::none_user()),
+                'live' => $live
+            ]);
         }
         return view('room');
     }

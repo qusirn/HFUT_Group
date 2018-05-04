@@ -27,7 +27,7 @@ Route::get('/live/{id}', 'RoomController@live');
 
 Route::get('/video/recording', 'VideoController@record_test');
 Route::get('/video/watch', 'VideoController@watch');
-
+Route::get('/video/{id}', 'VideoController@video');
 
 Route::get('/api/student/get_student', 'StudentController@get_student');
 Route::get('/api/student/update_student', 'StudentController@update_student');

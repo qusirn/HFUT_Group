@@ -43,7 +43,7 @@
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
-                                    <a href="room/123"><div class="ui inverted button">Join</div></a>
+                                    <a href="room/{{$live->l_code}}"><div class="ui inverted button">Join</div></a>
                                 </div>
                             </div>
                         </div>

@@ -12,9 +12,9 @@
             <h2 class="ui header">
                 <img class="ui image" src="/img/school.png">
                 <div class="content">
-                    Learn More
+                    {{ $live->l_headling }}
                     <div class="sub header">
-                        Check out our plug-in marketplace
+                        {{ $live->l_description}}
                     </div>
                 </div>
             </h2>

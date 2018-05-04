@@ -40,4 +40,8 @@ class VideoController extends Controller
         return view('record_watch');
     }
 
+    public function video(){
+        return view('record');
+    }
+
 }
