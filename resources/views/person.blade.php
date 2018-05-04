@@ -45,27 +45,45 @@
                 <div class="ui cards">
                     <div class="card">
                         <div class="content">
-                            <div class="header">未绑定手机</div>
+                            @if($student->s_tel == '')
+                                <div class="header">未绑定手机</div>
+                            @else
+                                <div class="header">已绑定手机</div>
+                            @endif
                             <div class="cardimage">
                                 <img src="/img/phone.png"></img>
                             </div>
                             <div class="introduce">
-                                <div class="description"><p class="introduce">绑定手机可享受到手机相关的安全和提醒服务</p> </div>
+                                @if($student->s_tel == '')
+                                    <div class="description"><p class="introduce">绑定手机可享受到手机相关的安全和提醒服务</p> </div>
+                                @else
+                                    <div class="description"><h5><p class="introduce">绑定手机号为</p></h5></div>
+                                    <div class="description"><p class="introduce">{{$student->s_tel}}</p> </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="ui bottom attached button"><i class="add icon"></i> 立即绑定 </div>
+                        <div onclick="bind_tel()" class="ui bottom attached button"><i class="add icon"></i> 立即绑定 </div>
                     </div>
                     <div class="card">
                         <div class="content">
-                            <div class="header">邮箱未绑定</div>
+                            @if($student->s_email == '')
+                                <div class="header">未绑定邮箱</div>
+                            @else
+                                <div class="header">已绑定邮箱</div>
+                            @endif
                             <div class="cardimage">
                                 <img src="/img/mail.png"></img>
                             </div>
                             <div class="introduce">
-                                <div class="description">您可以使用邮箱来保证您的用户安全 </div>
+                                @if($student->s_tel == '')
+                                    <div class="description">您可以使用邮箱来保证您的用户安全 </div>
+                                @else
+                                    <div class="description"><h5><p class="introduce">绑定邮箱为</p></h5></div>
+                                    <div class="description"><p class="introduce">{{$student->s_email}}</p> </div>
+                                @endif
                             </div>
                         </div>
-                        <div class="ui bottom attached button"><i class="add icon"></i> 绑定邮箱 </div>
+                        <div onclick="bind_email()" class="ui bottom attached button"><i class="add icon"></i> 绑定邮箱 </div>
                     </div>
                     <div class="card">
                         <div class="content">
@@ -169,10 +187,11 @@
             </div>
             <div class="ui bottom attached tab segment" data-tab="phone">
                 <div class="inside">
-                    <form class="ui form">
+                    <form class="ui form" method="POST" action="{{ route('s-tel-update') }}">
+                        {!! csrf_field() !!}
                         <div class="field">
                             <label>手机号码</label>
-                            <input type="text" name="" placeholder="手机号码">
+                            <input type="text" name="s_tel" placeholder="手机号码">
                         </div>
                         <div class="field">
                             <label>验证码</label>
@@ -187,14 +206,15 @@
             </div>
             <div class="ui bottom attached tab segment" data-tab="email">
                 <div class="inside">
-                    <form class="ui form">
+                    <form class="ui form" method="POST" action="{{ route('s-email-update') }}">
+                        {!! csrf_field() !!}
                         <div class="field">
                             <label>原邮箱</label>
-                            <input type="text" name="" placeholder="原邮箱">
+                            <input type="text" name="s_oriemail" placeholder="原邮箱">
                         </div>
                         <div class="field">
                             <label>新邮箱</label>
-                            <input type="text" name="" placeholder="新邮箱">
+                            <input type="text" name="s_email" placeholder="新邮箱">
                         </div>
                         <div class="ui hidden divider"></div>
                         <div class="ui hidden divider"></div>

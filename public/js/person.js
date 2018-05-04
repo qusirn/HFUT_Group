@@ -1,4 +1,16 @@
 $('.ui.basic.modal').modal('show');
+
+function bind_tel()
+{
+    $("[data-tab='phone']").click();
+}
+
+function bind_email()
+{
+    console.log("hahaha");
+    $("[data-tab='email']").click();
+}
+
 function preview(file) {
     console.log("123");
     if (file.files && file.files[0]) {

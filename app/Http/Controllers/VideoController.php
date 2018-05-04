@@ -33,4 +33,11 @@ class VideoController extends Controller
         ]);
     }
 
+    public function record_test(){
+        return view('record_test');
+    }
+    public function watch(){
+        return view('record_watch');
+    }
+
 }

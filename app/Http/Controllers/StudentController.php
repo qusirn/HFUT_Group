@@ -60,8 +60,7 @@ class StudentController extends Controller
         $student->save();
         $is_update = True;
         $request->session()->put('is_update', $is_update);
-        $request->session()->put('messages', Message::message('success', '欢迎 '.$student->s_username, Message::user($student)));
-        //return($student->toArray());
+        // $request->session()->put('messages', Message::message('success', '欢迎 '.$student->s_username, Message::user($student)));
         return redirect()->route('person');
     }
 
@@ -79,8 +78,37 @@ class StudentController extends Controller
             $student->save();
         }
         $request->session()->put('is_update', $is_update);
-        $request->session()->put('messages', Message::message('success', '修改头像成功', Message::user($student)));
+        //$request->session()->put('messages', Message::message('success', '欢迎 '.$user->s_username, Message::user($student)));
 
+        return redirect()->route('person');
+    }
+
+    public function tel_update(Request $request)
+    {
+        $is_update = False;
+        $this->validate($request, [
+            's_tel' => 'required|string|size:11|unique:students,s_tel',
+        ]);
+        $messages = $request->session()->get('messages');
+        $student = \App\Model\Student::where('s_id', $messages['user']['user_id'])->update(['s_tel' => $request->s_tel]);
+        $is_update = True;
+        $request->session()->put('is_update', $is_update);
+        // $request->session()->put('messages', Message::message('success', '欢迎 '.$user->s_username, Message::user($student)));
+        return redirect()->route('person');
+    }
+
+    public function email_update(Request $request)
+    {
+        $is_update = False;
+        $this->validate($request, [
+            's_oriemail' => 'required|email',
+            's_email' => 'required|email|unique:students,s_email',
+        ]);
+        $messages = $request->session()->get('messages');
+        $student = \App\Model\Student::where('s_id', $messages['user']['user_id'])->update(['s_email' => $request->s_email]);
+        $is_update = True;
+        $request->session()->put('is_update', $is_update);
+        // $request->session()->put('messages', Message::message('success', '欢迎 '.$user->s_username, Message::user($student)));
         return redirect()->route('person');
     }
 
