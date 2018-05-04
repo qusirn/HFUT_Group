@@ -47,7 +47,7 @@ class TeacherOpenController extends Controller
         $live->l_cover = Storage::url($url);
         //存储
         $live->save();
-        return view('live',['live' => $l_code]);
+        return redirect('live/'.$live->l_code);
     }
 
     //改变开关属性

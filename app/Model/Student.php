@@ -20,7 +20,7 @@ class Student extends Model
         $user = new Student;
         $user->s_username = $s_username;
         $user->s_tel = $s_tel;
-        $user->s_email = $s_tel;
+        $user->s_email = "未绑定邮箱";
         $user->s_passwd = hash('sha1', $s_passwd);
         $user->save();
         return Message::message('success', '欢迎 '.$user->s_username, Message::user($user));

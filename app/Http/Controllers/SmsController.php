@@ -28,7 +28,7 @@ class SmsController extends Controller {
         $tel = $request->tel;
         $sms->send(
             $request->tel,
-            '【5A5A】您的验证码是1234'
+            '【5A5A】您的验证码是5278'
         );
     }
 }

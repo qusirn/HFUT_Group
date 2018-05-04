@@ -105,7 +105,6 @@ $(document)
                 alert('请先输入手机号')
             } else {
                 settime(obj)
-                console.log("wang");
             }
             var user = {
                 'tel': $('#tel_num').val()
@@ -129,7 +128,7 @@ $(document)
                 return
             } else {
                 obj.attr("disabled","disabled")
-                obj.html('重发(' + countdown + ')')
+                obj.html('(' + countdown + ')')
                 countdown--
             }
             timer = setTimeout(function () {
