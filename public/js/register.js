@@ -97,7 +97,7 @@ $(document)
         $('.changepage').on('click', function (event) {
             $('.shape').shape('flip over')
         })
-        var countdown = 10
+        var countdown = 60
         var timer = null
         $('.captcha_button').on('click', function (event) {
             var obj = $('#btn')
@@ -125,7 +125,7 @@ $(document)
             if (countdown == 0) {
                 obj.removeAttr("disabled")
                 obj.html('获取')
-                countdown = 10
+                countdown = 60
                 return
             } else {
                 obj.attr("disabled","disabled")
