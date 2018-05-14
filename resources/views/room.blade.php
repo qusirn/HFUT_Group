@@ -1,4 +1,4 @@
-@extends('layout.header_and_footer')
+ @extends('layout.header_and_footer')
 @section('main_content')
 <script src="/js/AgoraRTCSDK-2.1.1.js"></script>
 <script src="/js/AgoraWBSDK-1.0.0.js"></script>
@@ -12,17 +12,15 @@
             <h2 class="ui header">
                 <img class="ui image" src="/img/school.png">
                 <div class="content">
-                    Learn More
+                    Java并发编程的艺术
                     <div class="sub header">
-                        Check out our plug-in marketplace
+                        Java并发编程的艺术
                     </div>
                 </div>
             </h2>
-            <a class="ui green label">Java</a> &nbsp
-            <a class="ui teal label">C++</a> &nbsp
-            <a class="ui blue label">Python</a> &nbsp
-            <a class="ui violet label">Learning</a> &nbsp
-            <a class="ui purple label">haooon</a> &nbsp
+            <a class="ui green label">实战</a> &nbsp
+            <a class="ui teal label">高级</a> &nbsp
+            <a class="ui blue label">进阶</a> &nbsp
         </div>
 
         <h4 class="ui horizontal divider header">
@@ -64,7 +62,8 @@
             <div class="ui column reply_button right aligned">
                 <form class="ui form">
                     <div class="field">
-                        <textarea rows="2" id="msg"></textarea>
+                        <textarea rows="2" id="msg" placeholder=""></textarea>
+                        <!-- <textarea rows="2" id="msg"></textarea> -->
                     </div>
                     <div class="ui two column grid">
                         <div class="column">
@@ -73,10 +72,13 @@
                                 @include('layout.emoji_list')
                             </div>
                         </div>
-                        <div class="column">
+                        <div class="column" id="ys123">
                             <div class="ui blue labeled submit icon button" id="send">
                                 <i class="icon edit"></i> Add Reply
                             </div>
+                            <!-- <button  disabled="disabled" class="ui grey labeled submit icon button" id="send">
+                                <i class="icon edit"></i> Add Reply
+                            </button> -->
                         </div>
                     </div>
                 </form>
@@ -86,7 +88,12 @@
 </div>
 <link rel="stylesheet" type="text/css" href="/css/room.css">
 <script src="/js/room.js"></script>
+<script type="text/javascript">
+    var times = 0;
+</script>
 <script src="/js/chat.js"></script>
 <script src="/js/script_reader.js"></script>
 <script src="/js/controller_for_student.js"></script>
+<script type="text/javascript">
+</script>
 @stop

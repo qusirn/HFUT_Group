@@ -36,6 +36,7 @@ class StudentController extends Controller
     {
         $messages = $request->session()->get('messages');
         $student = \App\Model\Student::where('s_id', $messages['user']['user_id'])->first();
+        print($messages['user']['user_id']);
         if($student->s_email == $request->s_email) {
             $this->validate($request, [
                 's_username' => 'required|string|min:4|max:24',

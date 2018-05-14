@@ -30,6 +30,23 @@ chat_session.onLoginSuccess = function(uid){
                     '</div>' +
                 '</div>' +
             '</div>'
+            if(msg['user_name'] == "Tommy"){
+                var message =
+                '<div class="comment">' +
+                    '<a class="avatar">' +
+                        '<img src="/storage/header_img/'+ msg['user_id'] + '.png">' +
+                    '</a>' +
+                    '<div class="content">' +
+                        '<a class="author">' + msg['user_name'] + '</a>' +
+                        '<div class="metadata">' +
+                            '<span class="date">' + myDate.toLocaleTimeString() + '</span>' +
+                        '</div>' +
+                        '<div class="text" style="color:red;">' +
+                            msg['msg'] +
+                        '</div>' +
+                    '</div>' +
+                '</div>'
+            }
              $('#comments').append(message)
              $(".reply_content").scrollTop($(".reply_content")[0].scrollHeight);
         }
@@ -62,7 +79,21 @@ chat_session.onLoginSuccess = function(uid){
                     'msg': $('#msg').val()
                 }
             );
-            $('#msg').val('');
+            times = times + 1;
+            if( times == 10){
+                $('#ys123').empty();
+                $('#ys123').append(
+                    $('<button  disabled="disabled" class="ui grey labeled submit icon button" id="send">'
+                         +'<i class="icon edit"></i> Add Reply' +
+                    '</button>')
+                );
+                $('#msg').val('');
+                $('#msg').attr('placeholder','你已被禁封');
+            }
+            else{
+                 $('#msg').val('');
+            }
+
         })
     };
 };

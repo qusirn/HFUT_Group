@@ -198,7 +198,7 @@
             </div>
         </div>
         <div class="ui container ten wide column grid">
-            <button class="ui red button eight wide column">退出直播</button>
+            <a href=/CloseLive><button class="ui red button eight wide column">退出直播</button></a>
         </div>
     </div>
 </div>

@@ -73,4 +73,14 @@ class TeacherOpenController extends Controller
         $l_code=date("ymdHis");
         return $l_code;
     }
+
+    //关闭直播
+    //传入房间号
+    public function closeLive()
+    {
+        // $deleteLive = \App\Model\Live::where('l_code',$l_code);
+        // $deleteLive->delete();
+        //
+        return view('room');
+    }
 }

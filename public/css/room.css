@@ -16,6 +16,7 @@
     height: 500px;
     background-color: white;
     background-image: url('/img/test.png');
+    background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;
 }
 .chat {
     height:600px;
