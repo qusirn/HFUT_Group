@@ -15,7 +15,7 @@
         <div class="ui secondary menu">
             <div class="header item">分类:</div>
             <a id="live-all" class="live item active" data-tab="live-all">全部</a>
-            <a id="live-C++" class="live item" data-tab="live-C++">C++</a>
+            <a id="live-all" class="live item" data-tab="live-C++">C++</a>
             <a id="live-all" class="live item" data-tab="live-Java">Java</a>
             <a id="live-all" class="live item" data-tab="live-Python">Python</a>
             <a id="live-all" class="live item" data-tab="live-PHP">PHP</a>

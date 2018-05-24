@@ -13,7 +13,7 @@
                 <img src="{{$live->l_cover}}">
             </div>
             <div class="content">
-                <a class="header">{{ $live->l_headling }}</a>
+                <a class="header1">{{ $live->l_headling }}</a>
                 <div class="meta">
                     <span class="date">{{ $live->l_description }}</span>
                 </div>

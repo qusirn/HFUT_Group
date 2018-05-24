@@ -13,7 +13,7 @@
                 <img src="{{ $video->v_cover}}">
             </div>
             <div class="content">
-                <a class="header">{{ $video->v_headline }}</a>
+                <a class="header1">{{ $video->v_headline }}</a>
                 <div class="meta">
                     <span class="date">{{ $video->v_description }}</span>
                 </div>
